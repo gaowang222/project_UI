@@ -12,12 +12,13 @@ class RegistController extends CI_Controller {
         $this->load->view('regist');
     }
     function getAjax(){
-        $login_name = $_GET['$login_name'];
-        $passwd = $_GET['$passwd'];
-        $tel = $_GET['$tel'];
-        $usercode = $_GET['$usercode'];
-        $loginaddress = $_GET['$loginaddress'];
+        $login_name = $_POST['login_name'];
+        $passwd = $_POST['passwd'];
+        $tel = $_POST['tel'];
+        $usercode = $_POST['usercode'];
+        $loginaddress = $_POST['loginaddress'];
+        $userImg = $_POST['userImg'];
         //1.插入新用户信息
-        $this->RegistModel->insertUser('login',$login_name,$passwd,$tel,$usercode,$loginaddress);
+        $this->RegistModel->insertUser('login',$login_name,$passwd,$userImg,$tel,$loginaddress,$usercode);
     }
 }

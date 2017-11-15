@@ -9,12 +9,12 @@ $(function(){
     //注册页面
     //点击注册实现功能
     $("#registBtn").click(function () {
-
         var $login_name = $("#login_name").val();
         var $passwd = $("#passwd").val();
         var $tel = $("#tel").val();
         var $loginaddress = $("#loginaddress").val();
         var $usercode = $("#usercode").val();
+        var $userImg = $("#userImg").val().substr($("#userImg").val().lastIndexOf("\/")+1);
         if(!$login_name ){
             $("#login_name").next('span').html('请输入账号!');
             $("#login_name").next('span').css('color','#f00');
@@ -51,7 +51,8 @@ $(function(){
                 passwd:$passwd,
                 tel:$tel,
                 usercode:$usercode,
-                loginaddress:$loginaddress
+                loginaddress:$loginaddress,
+                userImg:$userImg
             },       //要发送的数据
             type: "POST",           //发送的方式
             url: registUrl,        //url地址

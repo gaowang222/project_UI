@@ -8,8 +8,8 @@ class RegistModel extends CI_Model
         $this->load->database();
     }
 
-    function insertUser($table,$login_name	,$passwd,$tel,$loginaddress){
-        $sql = "insert into $table(login_name,passwd,tel,loginaddress) values('$login_name','$passwd','$tel','$loginaddress')";
+    function insertUser($table,$login_name,$passwd,$userImg,$tel,$loginaddress){
+        $sql = "insert into $table(login_name,passwd,userImg,tel,loginaddress) values('$login_name','$passwd','$userImg','$tel','$loginaddress')";
         $query = $this->db->query($sql);
         echo $query;
     }

@@ -94,13 +94,12 @@
                                             <span></span>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label">上传头像</label>
                                             <div class="controls">
                                                 <button type="button" id="j_upload_img_btn" class="btn btn-info">上传头像</button>
 
-                                                <ul id="upload_img_wrap"  name="product_img" ></ul>
+                                                <ul id="upload_img_wrap"  name="userImg" ></ul>
                                                 <!-- 传图片地址值用的 -->
-                                                <input type="hidden" id="product_img" name="product_img" >
+                                                <input type="hidden" id="userImg" name="userImg" >
 
                                                 <!-- 加载编辑器的容器：用来上传图片的，必须要，不然上传的图片会追加到上面的编辑器里面 -->
                                                 <ul id="uploadEditor">
@@ -244,12 +243,12 @@
         var imgval = '';
         for(var i in result){
             imageHtml += '<li><img src="'+result[i].src+'" alt="'+result[i].alt+'" height="150"></li>';
-            imgval +=','+ result[i].src;
+            imgval += result[i].src;
         }
         document.getElementById('upload_img_wrap').innerHTML = imageHtml;
         //如果需要保存图片地址到数据，还需要把所有的图片地址作为输入值
         //具体怎么设置看项目需求，我这里只是举个例子
-        document.getElementById('product_img').value = imgval;
+        document.getElementById('userImg').value = imgval;
     }
-</script>
-    <script src="<?php echo base_url()?>js/user.js"></script>
+</script >
+<script src="<?php echo base_url()?>js/user.js"></script>
