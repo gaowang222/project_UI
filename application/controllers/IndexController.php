@@ -16,6 +16,5 @@ class IndexController extends CI_Controller {
 		$data['catename']=$this->indexModel->getFirstProject('cate');
 		$data['catename2']=$this->indexModel->getFirstProject2('cate');
 		$this->load->view('index',$data);
-		$this->load->view('header',$data);
 	}
 }
