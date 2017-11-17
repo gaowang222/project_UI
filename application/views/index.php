@@ -5,7 +5,7 @@
 <!--[if (gt IE 9)|!(IE)]><!--><html class="noIE" lang="en-US"><!--<![endif]-->
 <head>
 	<meta charset="UTF-8" />
-	<title>GFashion - Responsive e-commerce HTML Template</title>
+	<title>依依不舍</title>
 	<meta name="description" content=""/>
 	<meta name="keywords" content=""/>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -248,7 +248,7 @@
 			<div class="container">
 				<div class="row">
 					<header class="section-header clearfix col-sm-offset-3 col-sm-6">
-						<h3 class="section-title">男装</h3>
+						<h3 class="section-title">女装</h3>
 						<p class="section-teaser">本店推出一些优惠商品</p>
 					</header>
 
@@ -266,59 +266,56 @@
 
 						<div class="owl-carousel owl-theme" data-visible-items="4" data-navigation="true" data-lazyload="true">
 							<?php
-							foreach ($slide as $item=>$value) {
+								$baseurl = base_url();
+								foreach ($slideLeft as $key => $value) {
 
-							?>
-							<div class="product" data-product-id="1">
-								<div class="entry-media">
-									<img data-src="<?php echo base_url()?>images/women/basic/848051-0014_1_t.jpg" alt="" class="lazyOwl thumb" />
-									<div class="hover">
-										<a href="<?php echo site_url('SingleController')?>" class="entry-url"></a>
-										<ul class="icons unstyled">
-											<li>
-												<div class="circle ribbon ribbon-sale">Sale</div>
-											</li>
-											<li>
-												<a href="<?php echo base_url()?>images/women/basic/848051-0014_1.jpg" class="circle" data-toggle="lightbox"><i class="iconfont-search"></i></a>
-											</li>
-											<li>
-												<a href="#" class="circle add-to-cart"><i class="iconfont-shopping-cart"></i></a>
-											</li>
-										</ul>
-										<div class="rate-bar">
-											<input type="range" value="4.5" step="0.5" id="backing1" />
-											<div class="rateit" data-rateit-backingfld="#backing1" data-rateit-starwidth="12" data-rateit-starheight="12" data-rateit-resetable="false"  data-rateit-ispreset="true" data-rateit-min="0" data-rateit-max="5"></div>
+									$itemid=$value['item_id'];
+									$imgs= strstr($value['imgs'],'__');
+									$lastImgs = $baseurl .'/img_1/'.substr($imgs,2);
+								?>
+								<div class="product" data-product-id="1">
+									<div class="entry-media">
+										<img data-src="<?php echo $lastImgs?>" alt="" class="lazyOwl thumb" style="height: 300px;"/>
+										<div class="hover">
+											<a href='<?php echo site_url("SingleController?item_id=$itemid")?>' class="entry-url"></a>
+											<ul class="icons unstyled">
+												<li>
+													<div class="circle ribbon ribbon-sale">销售</div>
+												</li>
+												<li>
+													<a href="<?php echo base_url()?>images/women/basic/848051-0014_1.jpg" class="circle" data-toggle="lightbox"><i class="iconfont-search"></i></a>
+												</li>
+												<li>
+													<a href="#" class="circle add-to-cart"><i class="iconfont-shopping-cart"></i></a>
+												</li>
+											</ul>
+											<div class="rate-bar">
+												<input type="range" value="4.5" step="0.5" id="backing1" />
+												<div class="rateit" data-rateit-backingfld="#backing1" data-rateit-starwidth="12" data-rateit-starheight="12" data-rateit-resetable="false"  data-rateit-ispreset="true" data-rateit-min="0" data-rateit-max="5"></div>
+											</div>
+										</div>
+									</div>
+									<div class="entry-main">
+										<h5 class="entry-title">
+											<a href="#"><?=$value['item_name'];?></a>
+										</h5>
+										<div class="entry-price">
+											<s class="entry-discount"><?=$value['discount'];?></s>
+											<strong class="accent-color price"><?=$value['price'];?></strong>
+										</div>
+										<div class="entry-links clearfix">
+											<a href="#" class="pull-left m-r">+ 添加到列表</a>
+											<a href="#" class="pull-right">+加入比较</a>
 										</div>
 									</div>
 								</div>
-								<div class="entry-main">
-									<h5 class="entry-title">
-										<a href="#"><?php echo $value['item_name']?></a>
-									</h5>
-									<div class="entry-price">
-										<s class="entry-discount">$ 350.00</s>
-										<strong class="accent-color price">$ 250.00</strong>
-									</div>
-									<div class="entry-links clearfix">
-										<a href="#" class="pull-left m-r">+ Add to Wishlist</a>
-										<a href="#" class="pull-right">+ Add to Compare</a>
-									</div>
-								</div>
-							</div>
-							<?php
-
-							}
+								<?php
+						         	}
 							?>
-
-
-
-
 						</div>
-
 					</div>
-					<!-- // END CAROUSEL -->
-
 				</div>
+					<!-- // END CAROUSEL -->
 			</div>
 		</section>
 		<!-- // FEATURED PRODUCTS -->
@@ -328,8 +325,8 @@
 			<div class="container">
 				<div class="row">
 					<header class="section-header clearfix col-sm-offset-3 col-sm-6">
-						<h3 class="section-title">New arrivals</h3>
-						<p class="section-teaser">Lorem ipsum dolor sit amet, consectetur adipiscing elit ac lobortis lacus</p>
+						<h3 class="section-title">男装</h3>
+						<p class="section-teaser">本店推出一些优惠商品</p>
 					</header>
 
 					<div class="clearfix"></div>
@@ -383,6 +380,7 @@
 												</div>
 											</div>
 										</div>
+
 										<div class="entry-main">
 											<h5 class="entry-title">
 												<a href="#"><?php echo $slideValue['item_name']?></a>

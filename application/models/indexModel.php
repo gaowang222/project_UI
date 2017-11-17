@@ -7,9 +7,8 @@ class indexModel extends CI_Model
     {
         $this->load->database();
     }
-
-    function getProduct($table){
-        $sql = "select item_name,imgs from $table";
+    function getProductLeft($table,$leftNum,$aimg){
+        $sql = "select item_id,item_name,imgs,price,discount from $table where leftad = $leftNum and aimg = $aimg";
         $query = $this->db->query($sql);
         return $query->result_array();
     }

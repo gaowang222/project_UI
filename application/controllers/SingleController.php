@@ -11,7 +11,7 @@ class SingleController extends CI_Controller {
     public function index()
     {
         $data['single'] = $this->SingleModel->getSingle('item');
-        $data['singlerecommend'] = $this->SingleModel->getrecommend('item',70,76);
+        $data['singlerecommend'] = $this->SingleModel->getrecommend('item');
         $this->load->view('single',$data);
     }
 }

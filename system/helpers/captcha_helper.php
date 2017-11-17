@@ -102,7 +102,7 @@ if ( ! function_exists('create_captcha'))
 		}
 
 		// -----------------------------------
-		// Remove old images
+		// Remove old img_1
 		// -----------------------------------
 
 		$now = microtime(TRUE);

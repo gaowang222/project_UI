@@ -84,7 +84,7 @@
 							<div class="product-preview">
 								<div class="big-image">
 									<a href="<?php echo $lastImgs?>" data-toggle="lightbox">
-										<img src="<?php echo $lastImgs?>" alt="" />
+										<img src="<?php echo $lastImgs?>" alt="" style="height: 400px;width:350px;"/>
 									</a>
 								</div>
 								<ul class="thumbs unstyled clearfix">
@@ -141,7 +141,13 @@
 													</select>
 												</div>
 											</div>
+
 										</div>
+										<ul class="inline-li li-m-r-l m-t-lg">
+											<li>
+												<a href="#" class="btn btn-default btn-lg btn-round add-to-cart">加入购物车</a>
+											</li>
+										</ul>
 									</figure>
 								</article>
 							</section>
@@ -182,13 +188,13 @@
 									foreach($singlerecommend as $recommend=>$recommendValue){
 										$imgs= strstr($recommendValue['imgs'],'__');
 										$lastImgs = $slideurl .'/img_1/'.substr($imgs,2);
-
+										$item_id = $recommendValue['item_id'];
 								?>
 								<div class="product" data-product-id="1">
 									<div class="entry-media">
-										<img data-src="<?php echo $lastImgs?>" alt="" class="lazyOwl thumb" style="height: 200px;" />
+										<img data-src="<?php echo $lastImgs?>" alt="" class="lazyOwl thumb" style="height: 300px;" />
 										<div class="hover">
-											<a href="#" class="entry-url"></a>
+											<a href='<?php echo site_url("SingleController?item_id=$item_id")?>' class="entry-url"></a>
 											<ul class="icons unstyled">
 												<li>
 													<div class="circle ribbon ribbon-sale">Sale</div>
@@ -197,7 +203,7 @@
 													<a href="<?php echo base_url()?>img/products/1.html" class="circle" data-toggle="lightbox"><i class="iconfont-search"></i></a>
 												</li>
 												<li>
-													<a href="#" class="circle add-to-cart"><i class="iconfont-shopping-cart"></i></a>
+													<a href='<?php echo site_url("SingleModel?item_id=$item_id")?>' class="circle add-to-cart"><i class="iconfont-shopping-cart"></i></a>
 												</li>
 											</ul>
 											<div class="rate-bar">
