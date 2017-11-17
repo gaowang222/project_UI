@@ -10,7 +10,7 @@ class IndexController extends CI_Controller {
 	}
 	public function index()
 	{
-		$data['slide'] = $this->indexModel->getProduct('item');
+		$data['slideLeft'] = $this->indexModel->getProductLeft('item','0','1');
 		$data['slideRight'] = $this->indexModel->getProductright('item','0','1');
 		$this->load->view('index',$data);
 	}
