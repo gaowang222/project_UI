@@ -46,10 +46,6 @@
 
 	<!-- SITE HEADER -->
 	<?php $this->load->view('header')?>
-	<!-- // SITE HEADER -->
-
-
-
 	<!-- HOMEPAGE SLIDER -->
 	<div id="home-slider">
 		<div class="flexslider">

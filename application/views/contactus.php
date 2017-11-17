@@ -53,8 +53,8 @@
 			<div class="container">
 				<div class="relative">
 					<ul class="bc unstyled clearfix">
-						<li><a href="#">Home</a></li>
-						<li class="active">Contact Us</li>
+						<li><a href="<?php echo site_url('IndexController')?>">首页</a></li>
+						<li class="active">个人中心</li>
 					</ul>
 				</div>
 			</div>
@@ -62,116 +62,64 @@
 		<!-- // BREADCRUMB -->
 		
 		<!-- SITE MAIN CONTENT -->
-		<main id="main-content" role="main">
-				
-			<div class="container">
-				<div class="row">
-				
-					<section class="section">
-						<section class="col-xs-12 col-sm-12">
-							<!-- GOOGLE MAP: You can config map to your cordination in `js/scripts.js` -->
-							<div id="gmap" class="gmap"></div>
-						</section>
-					</section>
-					
-					<section class="section">
-						<section class="col-xs-12 col-sm-8 col-md-9">
-						
-							<h3 class="uppercase text-bold"><span class="text-xs">What about sending us a message</span></h3>
-							<div class="row">
-								<div id="frm-contact-us">
-									<form id="contact-form" class="clearfix" role="form">
-										<div class="col-xs-12 col-sm-12 col-md-5">
-											<div class="form-group stylish-input">
-												<label for="contactName" class="required">Name</label>
-												<input type="text" class="form-control" id="contactName" name="name" data-validate="^[�-�\w\s]{2,30}$" require />
-											</div>
-											<div class="form-group stylish-input">
-												<label for="contactEmail" class="required">Email</label>
-												<input type="email" class="form-control" id="contactEmail" name="email" data-validate="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" require />
-											</div>
-											<div class="form-group stylish-input">
-												<label for="contactSubject">Subject</label>
-												<input type="text" class="form-control" name="subject" id="contactSubject" />
-											</div>
-										</div>
-										<div class="space10 visible-xs visible-sm"></div>
-										<div class="col-xs-12 col-sm-12 col-md-7">
-											<div class="form-group stylish-input">
-												<label for="contactMSG" class="required">Message</label>
-												<textarea id="contactMSG" class="form-control" name="message" style="height: 178px;" data-validate=".{2,400}$" required></textarea>
-											</div>
-										</div>
-										<div class="space10"></div>
-										<div class="col-xs-12 col-sm-12">
-											<button class="btn btn-default btn-round pull-right">Send Message</button>
-										</div>
-									</form>
-									
-									<div class="space40"></div>
-									<div class="clearfix"></div>
-									<!-- CONTACT FORM ALERTS -->
-									<div class="alert alert-success" id="contact_success" style="display: none;">
-										<button type="button" class="close" data-dismiss="alert">&times;</button>
-										<div class="alert-inner">
-											<strong>Thanks,</strong> your message recieved successfully. We'll get back to you as soon as possible.
-										</div>
-									</div>
-									<!-- /success msg -->
-									
-									<div class="alert alert-danger" id="contact_fail" style="display: none;">
-										<button type="button" class="close" data-dismiss="alert">&times;</button>
-										<div class="alert-inner"></div>
-									</div>
-									<!-- /error msg -->
-									<!-- /CONTACT FORM ALERTS -->
+	<main id="main-content" role="main">
+		<div class="container">
+			<div class="row">
 
+				<!-- SIDEBAR -->
+				<aside class="col-xs-12 col-sm-4 col-md-3">
+					<section class="sidebar m-t-b">
+						<section class="side-section">
+							<h3 class="uppercase text-bold"><span class="text-xs">欢迎来到个人中心页!</span></h3>
+
+							<ul class="nav nav-tabs nav-stacked">
+								<li><a href="<?php echo site_url('IndexController')?>">首页</a></li>
+								<li><a href="<?php echo site_url('ProductsController')?>"">女装</a></li>
+								<li><a href="<?php echo site_url('ProductsController')?>"">男装</a></li>
+								<li><a href="<?php echo site_url('StorelocatorController')?>"">商店位置</a></li>
+								<li><a href="<?php echo site_url('ContactusController')?>"">个人中心</a></li>
+								<li><a href="<?php echo site_url('LoginController')?>"">登录/注册</a></li>
+							</ul>
+						</section>
+
+						<!-- PROMO -->
+						<?php
+							$usermsgUrl = base_url();
+							foreach($usermsg as $usermsgitem =>$usermsgValue){
+								$lastImgs = $usermsgUrl .'/upload/image/20171117/'.$usermsgValue['userImg'];
+						?>
+						<div class="promo inverse-background" style="background: url('<?php echo $lastImgs?>') no-repeat; background-size: auto 100%;">
+							<div class="inner text-center np">
+								<div class="ribbon">
+									<h6 class="nmb">用户名：<?php echo $usermsgValue['login_name']?></h6>
+									<h5 class="text-semibold uppercase nmb">商城名：流连忘返商城</h5>
+									<div class="space10"></div>
+									<a href="<?php echo site_url('ProductsController')?>" class="with-icon prepend-icon"><i class="iconfont-caret-right"></i><span>购物Let's go!</span></a>
 								</div>
 							</div>
-						
-						</section>
-				
-						<!-- SIDEBAR -->
-						<aside class="col-xs-12 col-sm-4 col-md-3">
-						
-							<section class="sidebar">
-								<section class="side-section">
-									<h3 class="uppercase text-bold"><span class="text-xs">place for nice title</span></h3>
-									<p class="light-color text-xs">Sed ornare cras donec litora integer curabitur orci, at nullam aliquam libero nam himenaeos, amet massa  amet ut ipsum viverra mauris rhoncus neque aenean rhoncus gravida orci facilisis quis dui consectetur.</p>
-								</section>
-								
-								<section class="side-section">
-									<h3 class="uppercase text-bold"><span class="text-xs">Contact infomation</span></h3>
-									<div class="light-color text-xs">
-										<p>Lorem ipsum maecenas dapibus luctus</p>
-										<ul class="menu iconed-list unstyled">
-											<li>
-												<span class="list-icon"><i class="round-icon text-sm iconfont-map-marker"></i></span>
-												<div class="list-content">121 King Street, Melbourne Victoria 3000 Australia</div>
-											</li>
-											<li>
-												<span class="list-icon"><i class="round-icon text-sm iconfont-phone"></i></span>
-												<div class="list-content">(+00)1344356-675</div>
-											</li>
-											<li>
-												<span class="list-icon"><i class="round-icon text-sm iconfont-envelope-alt"></i></span>
-												<div class="list-content">support@themina.net</div>
-											</li>
-										</ul>
-									</div>
-								</section>
-							</section>
-							
-						</aside>
-						<!-- // SIDEBAR -->
-						
-						<div class="clearfix"></div>
+						</div>
+						<!-- // PROMO -->
+						<?php
+							}
+						?>
 					</section>
-				
-				</div>
+				</aside>
+				<!-- // SIDEBAR -->
+
+				<section class="col-xs-12 col-sm-8 col-md-9">
+					<section class="section">
+						<div class="m-t-lg clearfix">
+							<div class="row">
+								显示购买的产品
+							</div>
+						</div>
+
+					</section>
+				</section>
+
 			</div>
-			
-		</main>
+		</div>
+	</main>
 		<!-- // SITE MAIN CONTENT -->
 		
 		<!-- SITE FOOTER -->
