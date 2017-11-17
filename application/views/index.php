@@ -54,10 +54,16 @@
 	<div id="home-slider">
 		<div class="flexslider">
 			<ul class="slides">
+				<?php
+					$slideUrl = base_url();
+					foreach($indexslide as $indexslideitem=>$indexslideImg){
+						$imgs= strstr($indexslideImg['imgs'],'__');
+						$lastImgs = $slideUrl .'/img_1/'.substr($imgs,2);
+				?>
 				<!-- THE FIRST SLIDE -->
 				<li>
 					<!-- THE MAIN IMAGE IN THE SLIDE -->
-					<img src="<?php echo base_url()?>rev-slider/img/slides/Street-Fashion.jpg" alt="" />
+					<img src="<?php echo $lastImgs?>" alt="" />
 
 					<!-- THE CAPTIONS OF THE FIRST SLIDE -->
 					<div class="flex-caption h6 text-bold gfc uppercase animated"
@@ -72,7 +78,7 @@
 						 data-x="580"
 						 data-y="140"
 						 data-speed="900"
-						 data-start="2000">秋装流行款</div>
+						 data-start="2000"><?php echo $indexslideImg['item_name']?></div>
 
 					<div class="flex-caption h6 text-bold gfc text-center animated"
 						 data-animation="fadeInDown"
@@ -85,62 +91,9 @@
 					</div>
 
 				</li>
-
-				<!-- THE SECOND SLIDE -->
-				<li style="background: #fa6f57;">
-					<!-- THE MAIN IMAGE IN THE SLIDE -->
-					<img src="<?php echo base_url()?>img/transparent.png" alt="" />
-
-					<div class="flex-caption super-giant gfc animated uppercase"
-						 data-animation="fadeInUp"
-						 data-x="center"
-						 data-y="60"
-						 data-speed="500"
-						 data-start="900">Sale</div>
-
-					<div id="caption-left-round" class="flex-caption round gfc animated uppercase"
-						 data-animation="fadeInLeftBig"
-						 data-x="140"
-						 data-y="60"
-						 data-speed="600"
-						 data-start="1200"><div class="vmid"><span>Mid<br/>Season</span></div></div>
-
-					<div class="flex-caption round gfc animated uppercase"
-						 data-animation="fadeInRightBig"
-						 data-x="925"
-						 data-y="60"
-						 data-speed="600"
-						 data-start="1200"><div class="vmid"><span>Up to<br/>70% off</span></div></div>
-
-					<div class="flex-caption h3 gfc animated uppercase"
-						 data-animation="fadeInDown"
-						 data-x="center"
-						 data-y="250"
-						 data-speed="400"
-						 data-start="1800"><strong class="text-bold">500’s </strong>of New Products</div>
-
-				</li>
-
-				<!-- THE SECOND SLIDE -->
-				<li>
-					<!-- THE MAIN IMAGE IN THE SLIDE -->
-					<img src="<?php echo base_url()?>rev-slider/img/slides/3303349658_cfaebb811f_o.jpg" alt="" />
-
-					<div class="flex-caption herotext text-bold gfc bg-dark animated uppercase"
-						 data-animation="fadeInUpBig"
-						 data-x="760"
-						 data-y="60"
-						 data-speed="900"
-						 data-start="100">Free Shipping</div>
-
-					<div class="flex-caption h2 text-bold gfc bg-dark animated uppercase"
-						 data-animation="fadeInUpBig"
-						 data-x="797"
-						 data-y="175"
-						 data-speed="600"
-						 data-start="900">On Order over $2.000</div>
-
-				</li>
+				<?php
+					}
+				?>
 
 			</ul>
 		</div>
@@ -268,7 +221,6 @@
 							<?php
 								$baseurl = base_url();
 								foreach ($slideLeft as $key => $value) {
-
 									$itemid=$value['item_id'];
 									$imgs= strstr($value['imgs'],'__');
 									$lastImgs = $baseurl .'/img_1/'.substr($imgs,2);
@@ -300,8 +252,8 @@
 											<a href="#"><?=$value['item_name'];?></a>
 										</h5>
 										<div class="entry-price">
-											<s class="entry-discount"><?=$value['discount'];?></s>
-											<strong class="accent-color price"><?=$value['price'];?></strong>
+											<s class="entry-discount"><?=$value['price'];?></s>
+											<strong class="accent-color price"><?=$value['price'] - 10;?></strong>
 										</div>
 										<div class="entry-links clearfix">
 											<a href="#" class="pull-left m-r">+ 添加到列表</a>
@@ -387,7 +339,7 @@
 											</h5>
 											<div class="entry-price">
 												<s class="entry-discount">$ <?php echo $slideValue['price']?></s>
-												<strong class="accent-color price">$ <?php echo $slideValue['discount']?></strong>
+												<strong class="accent-color price">$ <?php echo $slideValue['price'] - 10?></strong>
 											</div>
 										</div>
 									</div>
