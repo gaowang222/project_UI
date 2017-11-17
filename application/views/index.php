@@ -51,9 +51,6 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12 col-sm-6 col-md-7">
-						<!-- CONTACT INFO -->
-
-						<!-- // CONTACT INFO -->
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-5">
 						<ul class="actions unstyled clearfix">
@@ -261,11 +258,11 @@
 							<ul class="dl-menu">
 
 								<li class="active">
-									<a href="javsacript:void(0);">首页</a>
+									<a href="<?php echo site_url('IndexController')?>">首页</a>
 								</li>
 
 								<li>
-									<a href="javsacript:void(0);">女装</a>
+									<a href="<?php echo site_url('IndexController')?>">女装</a>
 									<ul class="dl-submenu">
 										<?php
 										foreach($catename as $key2 => $value2){
