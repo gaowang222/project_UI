@@ -62,30 +62,32 @@
                         <h3 class="uppercase text-bold"><span class="text-xs">亲爱的用户，你好！欢迎来到登录页面</span></h3>
                         <div class="row">
                             <div id="frm-contact-us">
-                                <form id="contact-form" class="clearfix" role="form">
+                                <form id="contact-form" class="clearfix" role="form" method="post" action="<?php echo site_url('LoginController/getAjax')?>">
                                     <div class="col-xs-12 col-sm-12 col-md-5">
                                         <div class="form-group stylish-input">
-                                            <label for="contactName" class="required">账号</label>
-                                            <input type="text" class="form-control" id="contactName" name="name" data-validate="^[�-�\w\s]{2,30}$" require placeholder="账号必填"/>
+                                            <label for="login_name" class="required">账号</label>
+                                            <input type="text" class="form-control" id="login_name" name="login_name"  require placeholder="账号必填"/>
+                                            <span></span>
                                         </div>
                                         <div class="form-group stylish-input">
-                                            <label for="contactEmail" class="required">密码</label>
-                                            <input type="email" class="form-control" id="contactEmail" name="email" data-validate="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" require placeholder="密码必填"/>
+                                            <label for="passwd" class="required">密码</label>
+                                            <input type="password" class="form-control" id="passwd" name="passwd" require placeholder="密码必填"/>
+                                            <span></span>
                                         </div>
                                         <div class="form-group stylish-input">
-                                            <label for="contactEmail" class="required">确认密码</label>
-                                            <input type="email" class="form-control" id="contactEmail" name="email" data-validate="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" require placeholder="确认密码必填"/>
+                                            <label for="repasswd" class="required">确认密码</label>
+                                            <input type="password" class="form-control" id="repasswd" name="repasswd"  require placeholder="确认密码必填"/>
+                                            <span></span>
                                         </div>
                                         <div class="form-group stylish-input">
                                             <label for="contactSubject" class="required">验证码</label>
                                             <input type='text' placeholder="请输入验证码" class='form-control' name="usercode" id="usercode">
-                                            <img src="<?php echo base_url() ?>code/code.php" id="mycode" alt="验证码" style="position: relative;margin-top:-54px;left:70%;cursor: pointer;">
+                                            <img src="<?php echo site_url('RegistController/yzm_regist')?>" id="mycodeLogin" alt="验证码" style="position: relative;margin-top:-54px;left:70%;cursor: pointer">
                                         </div>
                                     </div>
-                                    <div class="space10 visible-xs visible-sm"></div>
                                     <div class="space10"></div>
                                     <div class="col-xs-4 col-sm-4">
-                                        <button class="btn btn-danger btn-round pull-left">点我登录</button>
+                                        <input type="submit" class="btn btn-danger btn-round pull-left"  value="点我登录">
                                         <button class="btn btn-danger btn-round pull-right"><a href="<?php echo site_url('RegistController')?>" class="btn-danger">点我注册</a></button>
                                     </div>
 
@@ -179,4 +181,8 @@
 
 </body>
 </html>
+<script>
+    var loginUrl ='<?php echo site_url("LoginController/getAjax")?>';
+    var loginCodeUrl = '<?php echo site_url('LoginController/yzm_login')?>';
+</script>
 <script src="<?php echo base_url()?>js/user.js"></script>

@@ -70,27 +70,27 @@
                                     <div class="col-xs-12 col-sm-12 col-md-5">
                                         <div class="form-group stylish-input">
                                             <label for="login_name" class="required">账号</label>
-                                            <input type="text" class="form-control" id="login_name" name="login_name" data-validate="^[�-�\w\s]{2,30}$" require placeholder="账号必填"/>
+                                            <input type="text" class="form-control" id="login_name" name="login_name"  require placeholder="账号必填"/>
                                             <span></span>
                                         </div>
                                         <div class="form-group stylish-input">
                                             <label for="passwd" class="required">密码</label>
-                                            <input type="password" class="form-control" id="passwd" name="passwd" data-validate="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" require placeholder="密码必填"/>
+                                            <input type="password" class="form-control" id="passwd" name="passwd" require placeholder="密码必填"/>
                                             <span></span>
                                         </div>
                                         <div class="form-group stylish-input">
                                             <label for="usercode" class="required">验证码</label>
                                             <input type='text' placeholder="请输入验证码" class='form-control' name="usercode" id="usercode">
-                                            <img src="<?php echo base_url() ?>code/code.php" id="mycode" alt="验证码" style="position: relative;margin-top:-54px;left:70%;cursor: pointer">
+                                            <img src="<?php echo site_url('RegistController/yzm_regist')?>" id="mycode" alt="验证码" style="position: relative;margin-top:-54px;left:70%;cursor: pointer">
                                         </div>
                                         <div class="form-group stylish-input">
                                             <label for="tel" class="required">手机号</label>
-                                            <input type="tel" class="form-control" id="tel" name="tel" data-validate="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" require placeholder="手机号必填"/>
+                                            <input type="tel" class="form-control" id="tel" name="tel" require placeholder="手机号必填"/>
                                             <span></span>
                                         </div>
                                         <div class="form-group stylish-input">
                                             <label for="loginaddress" class="required">地址</label>
-                                            <input type="text" class="form-control" id="loginaddress" name="loginaddress" data-validate="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" require placeholder="地址必填"/>
+                                            <input type="text" class="form-control" id="loginaddress" name="loginaddress" require placeholder="地址必填"/>
                                             <span></span>
                                         </div>
                                         <div class="form-group">
@@ -205,6 +205,8 @@
 </html>
 <script>
     var registUrl ='<?php echo site_url("RegistController/getAjax")?>';
+    var registCodeUrl = '<?php echo site_url('RegistController/yzm_regist')?>';
+    var loginUrl = '<?php echo site_url("LoginController/index") ?>';
 </script>
 <script type="text/javascript">
     //var ue = UE.getEditor('detail'); //detail是需要加载编辑器的id
