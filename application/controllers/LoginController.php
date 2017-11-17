@@ -24,7 +24,7 @@ class LoginController extends CI_Controller {
        foreach($row as $user){
             if($login_name == $user['login_name']){
                 if($passwd ==$user['passwd']){
-                   $this->load->view('index');
+                  echo '1';
                 }
             }
 

@@ -62,7 +62,7 @@
                         <h3 class="uppercase text-bold"><span class="text-xs">亲爱的用户，你好！欢迎来到登录页面</span></h3>
                         <div class="row">
                             <div id="frm-contact-us">
-                                <form id="contact-form" class="clearfix" role="form" method="post" action="<?php echo site_url('LoginController/getAjax')?>">
+                                <div id="contact-form" class="clearfix" role="form">
                                     <div class="col-xs-12 col-sm-12 col-md-5">
                                         <div class="form-group stylish-input">
                                             <label for="login_name" class="required">账号</label>
@@ -87,11 +87,11 @@
                                     </div>
                                     <div class="space10"></div>
                                     <div class="col-xs-4 col-sm-4">
-                                        <input type="submit" class="btn btn-danger btn-round pull-left"  value="点我登录">
+                                        <button class="btn btn-danger btn-round pull-left" id="loginBtn">点我登录</button>
                                         <button class="btn btn-danger btn-round pull-right"><a href="<?php echo site_url('RegistController')?>" class="btn-danger">点我注册</a></button>
                                     </div>
 
-                                </form>
+                                </div>
 
                                 <div class="space40"></div>
                                 <div class="clearfix"></div>
@@ -184,5 +184,6 @@
 <script>
     var loginUrl ='<?php echo site_url("LoginController/getAjax")?>';
     var loginCodeUrl = '<?php echo site_url('LoginController/yzm_login')?>';
+    var indexUrl = '<?php echo site_url('IndexController/index')?>'
 </script>
 <script src="<?php echo base_url()?>js/user.js"></script>

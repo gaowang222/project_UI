@@ -110,7 +110,7 @@ $(function(){
         var $passwd = $("#passwd").val();
         var $repasswd = $("#repasswd").val();
         var $usercode = $("#usercode").val();
-        if(!$login_name ){
+        if(!$login_name){
             $("#login_name").next('span').html('请输入账号!');
             $("#login_name").next('span').css('color','#f00');
             $("#login_name").focus();
@@ -163,8 +163,7 @@ $(function(){
             },
             success: function (msg) {  //处理正确时的信息
                 alert("登录成功");
-                //跳转到登录页
-                //window.location.href='IndexController.php';
+                window.location.href=indexUrl;
             }
         });
     })

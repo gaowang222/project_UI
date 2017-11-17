@@ -16,7 +16,7 @@
                                 <form action="#" method="post">
                                     <div class="input-iconed prepend">
                                         <button class="input-icon"><i class="iconfont-search"></i></button>
-                                        <label for="input-search" class="placeholder">Search here…</label>
+                                        <label for="input-search" class="placeholder">搜索</label>
                                         <input type="text" name="q" id="input-search" class="round-input full-width" required />
                                     </div>
                                 </form>
@@ -48,13 +48,13 @@
 
                             <div id="sub-cart" class="sub-header">
                                 <div class="cart-header">
-                                    <span>Your cart is currently empty.</span>
+                                    <span>您的购物车当前是空的.</span>
                                     <small><a href="<?php echo site_url('CartController')?>">(See All)</a></small>
                                 </div>
                                 <ul class="cart-items product-medialist unstyled clearfix"></ul>
                                 <div class="cart-footer">
                                     <div class="cart-total clearfix">
-                                        <span class="pull-left uppercase">Total</span>
+                                        <span class="pull-left uppercase">总数</span>
                                         <span class="pull-right total">$ 0</span>
                                     </div>
                                     <div class="text-right">
@@ -95,50 +95,36 @@
                 <!-- SITE NAVIGATION MENU -->
                 <nav id="site-menu" role="navigation">
                     <ul class="main-menu hidden-sm hidden-xs">
-                        <li class="active">
+                        <li class="active"value>
                             <a href="<?php echo site_url('IndexController')?>">首页</a>
                         </li>
                         <li>
                             <a href="<?php echo site_url('ProductsController')?>">女装</a>
                             <div class="mega-menu" data-col-lg="9" data-col-md="12">
+
                                 <div class="row">
+                                    <?php
+                                    foreach ($catename as $key => $value) {
+                                        ?>
+                                        <div class="col-md-3">
+                                            <h4 class="menu-title"><?=$value['cate_name']?></h4>
+                                            <ul class="mega-sub">
+                                                <?php
+                                                foreach ($catename2 as $key1 => $value1) {
+                                                    //var_dump($catename2)  ;
+                                                    if($value['parent_cate_id']==$value1['status']){
+                                                        ?>
+                                                        <li><a href="<?php echo site_url('ProductsController')?>"><?=$value1['cate_name']?></a></li>
 
-                                    <div class="col-md-3">
-                                        <h4 class="menu-title">服装</h4>
-                                        <ul class="mega-sub">
-                                            <li><a href="<?php echo site_url('ProductsController')?>">休闲服</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">晚礼服</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">礼服</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">女  牛仔裤</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">男牛 仔裤</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">秋天的风格</a></li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="col-md-3">
-                                        <h4 class="menu-title">配饰</h4>
-                                        <ul class="mega-sub">
-                                            <li><a href="<?php echo site_url('ProductsController')?>">休闲服</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">晚礼服</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">礼服</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">女 牛仔裤</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">男牛 仔裤</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">秋天的风格</a></li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="col-md-3">
-                                        <h4 class="menu-title">品牌</h4>
-                                        <ul class="mega-sub">
-                                            <li><a href="<?php echo site_url('ProductsController')?>">休闲服</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">晚礼服</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">礼服</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">女裤</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">男牛仔裤</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">秋天的风格</a></li>
-                                        </ul>
-                                    </div>
-
+                                                        <?php
+                                                    }
+                                                }
+                                                ?>
+                                            </ul>
+                                        </div>
+                                        <?php
+                                    }
+                                    ?>
                                     <div class="col-md-3">
                                         <div class="carousel slide m-b" data-ride="carousel">
                                             <div class="carousel-inner">
@@ -154,52 +140,36 @@
                                         <p>Lorem ipsum,dolor sit，奉献给了elit。阿提姆·涅克，布兰迪特·斯克伦斯克.</p>
                                         <a href="<?php echo site_url('ProductsController')?>" class="btn btn-default btn-round">去商店 →</a>
                                     </div>
-
                                 </div>
+                            </div>
                         </li>
                         <li>
                             <a href="<?php echo site_url('ProductsController')?>">男装</a>
-
-                            <!-- MEGA MENU -->
                             <div class="mega-menu" data-col-lg="9" data-col-md="12">
+
                                 <div class="row">
+                                    <?php
+                                    foreach ($catename as $key => $value) {
+                                        ?>
+                                        <div class="col-md-3">
+                                            <h4 class="menu-title"><?=$value['cate_name']?></h4>
+                                            <ul class="mega-sub">
+                                                <?php
+                                                foreach ($catename2 as $key1 => $value1) {
+                                                    //var_dump($catename2)  ;
+                                                    if($value['parent_cate_id']==$value1['status']){
+                                                        ?>
+                                                        <li><a href="<?php echo site_url('ProductsController')?>"><?=$value1['cate_name']?></a></li>
 
-                                    <div class="col-md-3">
-                                        <h4 class="menu-title">服装</h4>
-                                        <ul class="mega-sub">
-                                            <li><a href="<?php echo site_url('ProductsController')?>">休闲服</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">晚礼服</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">礼服</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">女  牛仔裤</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">男牛 仔裤</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">秋天的风格</a></li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="col-md-3">
-                                        <h4 class="menu-title">配饰</h4>
-                                        <ul class="mega-sub">
-                                            <li><a href="<?php echo site_url('ProductsController')?>">休闲服</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">晚礼服</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">礼服</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">女 牛仔裤</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">男牛 仔裤</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">秋天的风格</a></li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="col-md-3">
-                                        <h4 class="menu-title">品牌</h4>
-                                        <ul class="mega-sub">
-                                            <li><a href="<?php echo site_url('ProductsController')?>">休闲服</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">晚礼服</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">礼服</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">女裤</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">男牛仔裤</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">秋天的风格</a></li>
-                                        </ul>
-                                    </div>
-
+                                                        <?php
+                                                    }
+                                                }
+                                                ?>
+                                            </ul>
+                                        </div>
+                                        <?php
+                                    }
+                                    ?>
                                     <div class="col-md-3">
                                         <div class="carousel slide m-b" data-ride="carousel">
                                             <div class="carousel-inner">
@@ -215,9 +185,10 @@
                                         <p>Lorem ipsum,dolor sit，奉献给了elit。阿提姆·涅克，布兰迪特·斯克伦斯克.</p>
                                         <a href="<?php echo site_url('ProductsController')?>" class="btn btn-default btn-round">去商店 →</a>
                                     </div>
-
                                 </div>
-                                <!-- // MEGA MENU -->
+                            </div>
+
+                            <!-- MEGA MENU -->
 
                         </li>
 
@@ -236,9 +207,17 @@
                     <div id="mobile-menu" class="dl-menuwrapper visible-xs visible-sm">
                         <button class="dl-trigger"><i class="iconfont-reorder round-icon"></i></button>
                         <ul class="dl-menu">
-                            <li class="active">
-                                <a href="javsacript:void(0);">首页</a>
-                            </li>
+                            <?php
+                            foreach ($item as $key => $value) {
+                                echo $value['cate_name'];
+
+                                ?>
+                                <li class="active">
+                                    <a href="javsacript:void(0);">首页</a>
+                                </li>
+                                <?php
+                            }
+                            ?>
                             <li>
                                 <a href="javsacript:void(0);">女装</a>
 
