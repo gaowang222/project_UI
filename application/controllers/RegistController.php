@@ -11,14 +11,18 @@ class RegistController extends CI_Controller {
     {
         $this->load->view('regist');
     }
+    //注册生成验证码
+    function yzm_regist(){
+        $this->load->helper('captcha');
+        code();
+    }
     function getAjax(){
         $login_name = $_POST['login_name'];
-        $passwd = $_POST['passwd'];
+        $passwd = md5($_POST['passwd']);
         $tel = $_POST['tel'];
-        $usercode = $_POST['usercode'];
         $loginaddress = $_POST['loginaddress'];
         $userImg = $_POST['userImg'];
         //1.插入新用户信息
-        $this->RegistModel->insertUser('login',$login_name,$passwd,$userImg,$tel,$loginaddress,$usercode);
+        $this->RegistModel->insertUser('login',$login_name,$passwd,$userImg,$tel,$loginaddress);
     }
 }

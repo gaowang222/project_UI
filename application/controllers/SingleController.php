@@ -6,9 +6,12 @@ class SingleController extends CI_Controller {
     {
         parent::__construct();
         $this->load->helper('url');
+        $this->load->model('SingleModel');
     }
     public function index()
     {
-        $this->load->view('single');
+        $data['single'] = $this->SingleModel->getSingle('item');
+        $data['singlerecommend'] = $this->SingleModel->getrecommend('item',70,76);
+        $this->load->view('single',$data);
     }
 }
