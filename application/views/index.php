@@ -260,11 +260,11 @@
 							<ul class="dl-menu">
 
 								<li class="active">
-									<a href="javsacript:void(0);">首页</a>
+									<a href="<?php echo site_url('IndexController')?>">首页</a>
 								</li>
 
 								<li>
-									<a href="javsacript:void(0);">女装</a>
+									<a href="<?php echo site_url('ProductsController')?>">女装</a>
 									<ul class="dl-submenu">
 										<?php
 										foreach($catename as $key2 => $value2){
@@ -294,7 +294,7 @@
 									</ul>
 								</li>
 								<li>
-									<a href="javsacript:void(0);">男装</a>
+									<a href="<?php echo site_url('IndexController')?>">男装</a>
 
 									<ul class="dl-submenu">
 										<?php

@@ -247,7 +247,7 @@
 								<a href="<?php echo site_url('StorelocatorController')?>">商店位置</a>
 							</li>
 							<li>
-								<a href="<?php echo site_url('ContactusController')?>">联系我们</a>
+								<a href="<?php echo site_url('ContactusController')?>">个人中心</a>
 							</li>
 							<li>
 								<a href="<?php echo site_url('LoginController')?>">登录/注册</a>
