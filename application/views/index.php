@@ -146,7 +146,7 @@
 								<a href="<?php echo site_url('IndexController')?>">首页</a>
 							</li>
 							<li>
-								<a href="<?php echo site_url('ProductsController')?>">女装</a>
+								<a href="<?php echo site_url('IndexController')?>">女装</a>
 								<div class="mega-menu" data-col-lg="9" data-col-md="12">
 									<div class="row">
 										<?php
@@ -160,7 +160,13 @@
 														//var_dump($catename2)  ;
 														if($value['parent_cate_id']==$value1['status']){
 															?>
-															<li><a href="<?php echo site_url('ProductsController?cate_id='.$value1['cate_id'])?>"><?=$value1['cate_name']?></a></li>
+															<li><a href="<?php
+
+																//$id= $value1['cate_id'];
+																//?cate_id='.$value1['cate_id']
+
+
+																echo site_url('ProductsController?cate_id=').$value1['cate_id']  ?>"><?=$value1['cate_name']?></a></li>
 
 															<?php
 														}
@@ -189,7 +195,7 @@
 									</div>
 								</div>
 							<li>
-								<a href="<?php echo site_url('ProductsController')?>">男装</a>
+								<a href="<?php echo site_url('IndexController')?>">男装</a>
 
 								<!-- MEGA MENU -->
 								<div class="mega-menu" data-col-lg="9" data-col-md="12">

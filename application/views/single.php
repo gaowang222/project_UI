@@ -147,7 +147,7 @@
 								<a href="<?php echo site_url('IndexController')?>">首页</a>
 							</li>
 							<li>
-								<a href="<?php echo site_url('ProductsController')?>">女装</a>
+								<a href="<?php echo site_url('IndexController')?>">女装</a>
 								<div class="mega-menu" data-col-lg="9" data-col-md="12">
 									<div class="row">
 										<?php
@@ -190,7 +190,7 @@
 									</div>
 								</div>
 							<li>
-								<a href="<?php echo site_url('ProductsController')?>">男装</a>
+								<a href="<?php echo site_url('IndexController')?>">男装</a>
 
 								<!-- MEGA MENU -->
 								<div class="mega-menu" data-col-lg="9" data-col-md="12">
@@ -412,8 +412,17 @@
 												<div class="inline-middle styled-dd">
 													<select>
 														<option>-- 请选择 --</option>
-														<option value="Black">黑色</option>
-														<option value="Aubergine">红色</option>
+														<?php
+														foreach($color as $colorval){
+															if($colorval['item_id']==$_GET['item_id']){
+																$color_name=$colorval['color_name'];
+																echo "<option value=\"Black\">$color_name</option>";
+															}
+														}
+														?>
+
+
+
 													</select>
 												</div>
 											</div>
@@ -423,10 +432,17 @@
 												<div class="inline-middle styled-dd">
 													<select>
 														<option>-- 请选择 --</option>
-														<option value="xs">XS</option>
-														<option value="s">S</option>
-														<option value="s">M</option>
-														<option value="s">L</option>
+														<?php
+														foreach($size as $sizeval){
+															if($sizeval['item_id']==$_GET['item_id']){
+																$size_name=$sizeval['size_name'];
+																echo "<option value=\"Black\">$size_name</option>";
+															}
+														}
+														?>
+
+
+
 													</select>
 												</div>
 											</div>
@@ -434,7 +450,7 @@
 										</div>
 										<ul class="inline-li li-m-r-l m-t-lg">
 											<li>
-												<a href="#" class="btn btn-default btn-lg btn-round add-to-cart">加入购物车</a>
+												<a href="<?php echo site_url('CartController?item_id='.$item_id)?>" class="btn btn-default btn-lg btn-round ">加入购物车</a>
 											</li>
 										</ul>
 									</figure>

@@ -13,8 +13,15 @@ class ProductsController extends CI_Controller {
         $data['item']=$this->ProductsModel->getItem();
         $data['cate']=$this->ProductsModel->getCate();
         $data['catename']=$this->ProductsModel->getFirstProject();
+
+        //echo  $data['cateid'];
         $data['catename2']=$this->ProductsModel->getFirstProject2('cate');
 
+
+        $this->load->view('products',$data);
+    }
+    public function open(){
+        $data['cateid']=$_GET['cate_id'];
         $this->load->view('products',$data);
     }
 }

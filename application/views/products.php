@@ -146,7 +146,7 @@
 								<a href="<?php echo site_url('IndexController')?>">首页</a>
 							</li>
 							<li>
-								<a href="<?php echo site_url('ProductsController')?>">女装</a>
+								<a href="<?php echo site_url('IndexController')?>">女装</a>
 								<div class="mega-menu" data-col-lg="9" data-col-md="12">
 									<div class="row">
 										<?php
@@ -160,7 +160,7 @@
 														//var_dump($catename2)  ;
 														if($value['parent_cate_id']==$value1['status']){
 															?>
-															<li><a href="<?php echo site_url('ProductsController?cate_id='.$value1['cate_id'])?>"><?=$value1['cate_name']?></a></li>
+															<li><a href="<?php echo site_url('ProductsController/open?cate_id='.$cateid)?>"><?=$value1['cate_name']?></a></li>
 
 															<?php
 														}
@@ -189,7 +189,7 @@
 									</div>
 								</div>
 							<li>
-								<a href="<?php echo site_url('ProductsController')?>">男装</a>
+								<a href="<?php echo site_url('IndexController')?>">男装</a>
 
 								<!-- MEGA MENU -->
 								<div class="mega-menu" data-col-lg="9" data-col-md="12">
@@ -247,7 +247,7 @@
 								<a href="<?php echo site_url('StorelocatorController')?>">商店位置</a>
 							</li>
 							<li>
-								<a href="<?php echo site_url('ContactusController')?>">联系我们</a>
+								<a href="<?php echo site_url('ContactusController')?>">个人中心</a>
 							</li>
 							<li>
 								<a href="<?php echo site_url('LoginController')?>">登录/注册</a>
@@ -275,8 +275,10 @@
 
 												<ul class="dl-submenu">
 													<?php
+
 													foreach($catename2  as $key3 => $value3){
 														if($value2['parent_cate_id']==$value3['status']){
+
 															?>
 															<li><a href="<?php echo site_url('ProductsController?cate_id='.$value3['cate_id'])?>"><?=$value3['cate_name']?></a></li>
 															<?php
@@ -342,8 +344,8 @@
 			<div class="container">
 				<div class="relative">
 					<ul class="bc push-up unstyled clearfix">
-						<li><a href="<?php echo site_url('IndexController')?>">Home</a></li>
-						<li class="active">Products</li>
+						<li><a href="<?php echo site_url('IndexController')?>">首页</a></li>
+						<li class="active">产品展示</li>
 					</ul>
 				</div>
 			</div>
@@ -439,148 +441,11 @@
 								<!-- // BRANDS -->
 
 								<!-- PRODUCT FILTER -->
-								<section class="side-section bg-white">
-									<header class="side-section-header">
-										<h3 class="side-section-title">Filter</h3>
-									</header>
 
-									<!-- PRICE RANGE SLIDER -->
-									<div id="filter-by-price" class="side-section-content">
-										<h4 class="side-section-subheader">Filter By Price</h4>
-										<div class="range-slider-container">
-											<div class="range-slider" data-min="0" data-max="2000" data-step="10" data-currency="$"></div>
-											<div class="range-slider-value clearfix">
-												<span>Price: &ensp;</span>
-												<span class="min"></span>
-												<span class="max"></span>
-											</div>
-										</div>
-									</div>
-									<!-- // PRICE RANGE SLIDER -->
-
-									<!-- FILTER BY SIZE -->
-									<div id="filter-by-size" class="side-section-content">
-										<h4 class="side-section-subheader">Filter By Size</h4>
-										<ul class="inline-li li-m-lg text-center unstyled">
-											<li>
-												<a href="#" class="round-icon" data-toggle="tooltip" data-title="X-Small / UK 8"><small>XS</small></a>
-												<input type="checkbox" class="filter-checkbox filter-size" value="XS" />
-											</li>
-											<li>
-												<a href="#" class="round-icon" data-toggle="tooltip" data-title="Small / UK 10"><small>S</small></a>
-												<input type="checkbox" class="filter-checkbox filter-size" value="S" />
-											</li>
-											<li>
-												<a href="#" class="round-icon" data-toggle="tooltip" data-title="Medium / UK 12"><small>M</small></a>
-												<input type="checkbox" class="filter-checkbox filter-size" value="M" />
-											</li>
-											<li>
-												<a href="#" class="round-icon" data-toggle="tooltip" data-title="Large / UK 14"><small>L</small></a>
-												<input type="checkbox" class="filter-checkbox filter-size" value="L" />
-											</li>
-											<li>
-												<a href="#" class="round-icon" data-toggle="tooltip" data-title="X-Large / UK 16"><small>XL</small></a>
-												<input type="checkbox" class="filter-checkbox filter-size" value="XL" />
-											</li>
-											<li>
-												<a href="#" class="round-icon" data-toggle="tooltip" data-title="XX-Large"><small>XXL</small></a>
-												<input type="checkbox" class="filter-checkbox filter-size" value="XXL" />
-											</li>
-										</ul>
-									</div>
-									<!-- // FILTER BY SIZE -->
-
-									<!-- FILTER BY COLOR -->
-									<div id="filter-by-color" class="side-section-content">
-										<h4 class="side-section-subheader">Filter By Colour</h4>
-										<ul class="inline-li li-m-sm text-center unstyled">
-											<li>
-												<a href="#" class="round-icon color-box" data-toggle="tooltip" data-title="Black" style="background: #000;"></a>
-												<input type="checkbox" class="filter-checkbox filter-color" value="black" />
-											</li>
-											<li>
-												<a href="#" class="round-icon color-box" data-toggle="tooltip" data-title="White" style="background: #fff; border-color: #acacac;"></a>
-												<input type="checkbox" class="filter-checkbox filter-color" value="white" />
-											</li>
-											<li>
-												<a href="#" class="round-icon color-box" data-toggle="tooltip" data-title="Green" style="background: #60bd0d;"></a>
-												<input type="checkbox" class="filter-checkbox filter-color" value="green" />
-											</li>
-											<li>
-												<a href="#" class="round-icon color-box" data-toggle="tooltip" data-title="Red" style="background: #ff5757;"></a>
-												<input type="checkbox" class="filter-checkbox filter-color" value="red" />
-											</li>
-											<li>
-												<a href="#" class="round-icon color-box" data-toggle="tooltip" data-title="Blue" style="background: #0d9abd;"></a>
-												<input type="checkbox" class="filter-checkbox filter-color" value="blue" />
-											</li>
-											<li>
-												<a href="#" class="round-icon color-box" data-toggle="tooltip" data-title="Brown" style="background: #c57313;"></a>
-												<input type="checkbox" class="filter-checkbox filter-color" value="brown" />
-											</li>
-											<li>
-												<a href="#" class="round-icon color-box" data-toggle="tooltip" data-title="Purple" style="background: #a613c5;"></a>
-												<input type="checkbox" class="filter-checkbox filter-color" value="purple" />
-											</li>
-											<li>
-												<a href="#" class="round-icon color-box" data-toggle="tooltip" data-title="Silver" style="background: #e5e5e8;"></a>
-												<input type="checkbox" class="filter-checkbox filter-color" value="silver" />
-											</li>
-											<li>
-												<a href="#" class="round-icon color-box" data-toggle="tooltip" data-title="Patternie" style="background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAHklEQVQIW2NkYGD4D8QgwAgjMASgCiAqwcqgACwAAIrDBAOqGrGNAAAAAElFTkSuQmCC');"></a>
-												<input type="checkbox" class="filter-checkbox filter-color" value="patternie" />
-											</li>
-										</ul>
-									</div>
-									<!-- // FILTER BY COLOR -->
-								</section>
 								<!-- // PRODUCT FILTER -->
 
 								<!-- BEST SELLERS -->
-								<section class="side-section bg-white">
-									<header class="side-section-header">
-										<h3 class="side-section-title">Best Sellers</h3>
-									</header>
-									<div class="side-section-content">
-										<ul class="product-medialist li-m-t unstyled clearfix">
-											<li>
-												<div class="item clearfix">
-													<a href="<?php echo base_url()?>images/women/basic/688086-0286_1.jpg" data-toggle="lightbox" class="entry-thumbnail">
-														<img src="<?php echo base_url()?>images/women/basic/688086-0286_1_t.jpg" alt="Inceptos orci hac libero" />
-													</a>
-													<h5 class="entry-title"><a href="single.php">Inceptos orci hac libero</a></h5>
-													<s class="entry-discount m-r-sm"><span class="text-sm">$ 350.00</span></s>
-													<span class="entry-price accent-color">$ 250.00</span>
-												</div>
-											</li>
-											<li>
-												<div class="item clearfix">
-													<a href="<?php echo base_url()?>images/women/basic/589550-0014_1.jpg" data-toggle="lightbox" class="entry-thumbnail">
-														<img src="<?php echo base_url()?>images/women/basic/589550-0014_1_t.jpg" alt="Inceptos orci hac libero" />
-													</a>
-													<h5 class="entry-title"><a href="single.php">Inceptos orci hac libero</a></h5>
-													<span class="entry-price">$ 350.00</span>
-												</div>
-											</li>
-										</ul>
-									</div>
-								</section>
-								<!-- // BEST SELLERS -->
 
-								<!-- PROMO -->
-								<div class="promo inverse-background" style="background: url('<?php echo base_url()?>images/demo/Barn-Dress-Girl_t.jpg') no-repeat; background-size: auto 100%;">
-									<div class="inner text-center np">
-										<div class="ribbon">
-											<h6 class="nmb">New Arrivals</h6>
-											<h5 class="text-semibold uppercase nmb">Leather Fashion</h5>
-											<div class="space10"></div>
-											<a href="products.php" class="with-icon prepend-icon"><i class="iconfont-caret-right"></i><span> Shop Now</span></a>
-										</div>
-									</div>
-								</div>
-								<!-- // PROMO -->
-
-							</section>
 						</aside>
 						<!-- // SIDEBAR -->
 						<section class="col-xs-12 col-sm-8 col-md-9">
