@@ -45,7 +45,296 @@
 <div id="page-wrapper">
 
 	<!-- SITE HEADER -->
-	<?php $this->load->view('header')?>
+	<header id="site-header" role="banner">
+		<!-- HEADER TOP -->
+		<div class="header-top">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-6 col-md-7">
+						<!-- CONTACT INFO -->
+
+						<!-- // CONTACT INFO -->
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-5">
+						<ul class="actions unstyled clearfix">
+							<li>
+								<!-- SEARCH BOX -->
+								<div class="search-box">
+									<form action="#" method="post">
+										<div class="input-iconed prepend">
+											<button class="input-icon"><i class="iconfont-search"></i></button>
+											<label for="input-search" class="placeholder">搜索</label>
+											<input type="text" name="q" id="input-search" class="round-input full-width" required />
+										</div>
+									</form>
+								</div>
+								<!-- // SEARCH BOX -->
+							</li>
+							<li data-toggle="sub-header" data-target="#sub-social">
+								<!-- SOCIAL ICONS -->
+								<a href="javascript:void(0);" id="social-icons">
+									<i class="iconfont-share round-icon"></i>
+								</a>
+
+								<div id="sub-social" class="sub-header">
+									<ul class="social-list unstyled text-center">
+										<li><a href="#"><i class="iconfont-facebook round-icon"></i></a></li>
+										<li><a href="#"><i class="iconfont-twitter round-icon"></i></a></li>
+										<li><a href="#"><i class="iconfont-google-plus round-icon"></i></a></li>
+										<li><a href="#"><i class="iconfont-pinterest round-icon"></i></a></li>
+										<li><a href="#"><i class="iconfont-rss round-icon"></i></a></li>
+									</ul>
+								</div>
+								<!-- // SOCIAL ICONS -->
+							</li>
+							<li data-toggle="sub-header" data-target="#sub-cart">
+								<!-- SHOPPING CART -->
+								<a href="javascript:void(0);" id="total-cart">
+									<i class="iconfont-shopping-cart round-icon"></i>
+								</a>
+
+								<div id="sub-cart" class="sub-header">
+									<div class="cart-header">
+										<span>您的购物车当前是空的.</span>
+										<small><a href="<?php echo site_url('CartController')?>">(See All)</a></small>
+									</div>
+									<ul class="cart-items product-medialist unstyled clearfix"></ul>
+									<div class="cart-footer">
+										<div class="cart-total clearfix">
+											<span class="pull-left uppercase">总数</span>
+											<span class="pull-right total">$ 0</span>
+										</div>
+										<div class="text-right">
+											<a href="<?php echo site_url('CartController')?>" class="btn btn-default btn-round view-cart">View Cart</a>
+										</div>
+									</div>
+								</div>
+								<!-- // SHOPPING CART -->
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<!-- ADD TO CART MESSAGE -->
+			<div class="cart-notification">
+				<ul class="unstyled"></ul>
+			</div>
+			<!-- // ADD TO CART MESSAGE -->
+		</div>
+		<!-- // ADD TO CART MESSAGE -->
+
+		<!-- // HEADER TOP -->
+		<!-- MAIN HEADER -->
+		<div class="main-header-wrapper">
+			<div class="container">
+				<div class="main-header">
+					<!-- CURRENCY / LANGUAGE / USER MENU -->
+
+					<!-- // CURRENCY / LANGUAGE / USER MENU -->
+					<!-- SITE LOGO -->
+					<div class="logo-wrapper">
+						<a href="<?php echo site_url('IndexController')?>" class="logo" title="GFashion - Responsive e-commerce HTML Template">
+							<img src="<?php echo base_url()?>img/logo.png" alt="GFashion - Responsive e-commerce HTML Template" />
+						</a>
+					</div>
+					<!-- // SITE LOGO -->
+					<!-- SITE NAVIGATION MENU -->
+					<nav id="site-menu" role="navigation">
+						<ul class="main-menu hidden-sm hidden-xs">
+							<li class="active"value>
+								<a href="<?php echo site_url('IndexController')?>">首页</a>
+							</li>
+							<li>
+								<a href="<?php echo site_url('ProductsController')?>">女装</a>
+								<div class="mega-menu" data-col-lg="9" data-col-md="12">
+									<div class="row">
+										<?php
+										foreach ($catename as $key => $value) {
+											?>
+											<div class="col-md-3">
+												<h4 class="menu-title"><?=$value['cate_name']?></h4>
+												<ul class="mega-sub">
+													<?php
+													foreach ($catename2 as $key1 => $value1) {
+														//var_dump($catename2)  ;
+														if($value['parent_cate_id']==$value1['status']){
+															?>
+															<li><a href="<?php echo site_url('ProductsController?cate_id='.$value1['cate_id'])?>"><?=$value1['cate_name']?></a></li>
+
+															<?php
+														}
+													}
+													?>
+												</ul>
+											</div>
+											<?php
+										}
+										?>
+										<div class="col-md-3">
+											<div class="carousel slide m-b" data-ride="carousel">
+												<div class="carousel-inner">
+													<div class="item active">
+														<img src="<?php echo base_url()?>images/men/slide1.jpg" alt="" />
+													</div>
+													<div class="item">
+														<img src="<?php echo base_url()?>images/men/slide2.jpg" alt="" />
+													</div>
+												</div>
+											</div>
+											<h5 class="text-semibold uppercase m-b-sm">主打产品</h5>
+											<p>Lorem ipsum,dolor sit，奉献给了elit。阿提姆·涅克，布兰迪特·斯克伦斯克.</p>
+											<a href="<?php echo site_url('ProductsController')?>" class="btn btn-default btn-round">去商店 →</a>
+										</div>
+									</div>
+								</div>
+							<li>
+								<a href="<?php echo site_url('ProductsController')?>">男装</a>
+
+								<!-- MEGA MENU -->
+								<div class="mega-menu" data-col-lg="9" data-col-md="12">
+									<div class="row">
+										<?php
+										foreach ($catename as $key => $value) {
+											?>
+											<div class="col-md-3">
+												<h4 class="menu-title"><?=$value['cate_name']?></h4>
+												<ul class="mega-sub">
+													<?php
+													foreach ($catename2 as $key1 => $value1) {
+														//var_dump($catename2)  ;
+														if($value['parent_cate_id']==$value1['status']){
+															?>
+															<li><a href="<?php echo site_url('ProductsController?cate_id='.$value1['cate_id'])?>"><?=$value1['cate_name']?></a></li>
+
+															<?php
+														}
+													}
+													?>
+												</ul>
+											</div>
+											<?php
+										}
+										?>
+										<div class="col-md-3">
+											<div class="carousel slide m-b" data-ride="carousel">
+												<div class="carousel-inner">
+													<div class="item active">
+														<img src="<?php echo base_url()?>images/men/slide1.jpg" alt="" />
+													</div>
+													<div class="item">
+														<img src="<?php echo base_url()?>images/men/slide2.jpg" alt="" />
+													</div>
+												</div>
+											</div>
+											<h5 class="text-semibold uppercase m-b-sm">主打产品</h5>
+											<p>Lorem ipsum,dolor sit，奉献给了elit。阿提姆·涅克，布兰迪特·斯克伦斯克.</p>
+											<a href="<?php echo site_url('ProductsController')?>" class="btn btn-default btn-round">去商店 →</a>
+										</div>
+									</div>
+								</div>
+
+								<!-- // MEGA MENU -->
+
+							</li>
+
+
+							<!-- MEGA MENU -->
+
+
+
+							<li>
+								<a href="<?php echo site_url('StorelocatorController')?>">商店位置</a>
+							</li>
+							<li>
+								<a href="<?php echo site_url('ContactusController')?>">联系我们</a>
+							</li>
+							<li>
+								<a href="<?php echo site_url('LoginController')?>">登录/注册</a>
+							</li>
+						</ul>
+
+						<!-- MOBILE MENU -->
+						<div id="mobile-menu" class="dl-menuwrapper visible-xs visible-sm">
+							<button class="dl-trigger"><i class="iconfont-reorder round-icon"></i></button>
+							<ul class="dl-menu">
+
+								<li class="active">
+									<a href="javsacript:void(0);">首页</a>
+								</li>
+
+								<li>
+									<a href="javsacript:void(0);">女装</a>
+									<ul class="dl-submenu">
+										<?php
+										foreach($catename as $key2 => $value2){
+											?>
+
+											<li>
+												<a href="<?php echo site_url('ProductsController')?>"><?=$value2['cate_name']?></a>
+
+												<ul class="dl-submenu">
+													<?php
+													foreach($catename2  as $key3 => $value3){
+														if($value2['parent_cate_id']==$value3['status']){
+															?>
+															<li><a href="<?php echo site_url('ProductsController?cate_id='.$value3['cate_id'])?>"><?=$value3['cate_name']?></a></li>
+															<?php
+														}
+													}
+													?>
+
+												</ul>
+											</li>
+											<?php
+										}
+
+										?>
+
+									</ul>
+								</li>
+								<li>
+									<a href="javsacript:void(0);">男装</a>
+
+									<ul class="dl-submenu">
+										<?php
+										foreach($catename as $key2 => $value2){
+											?>
+
+											<li>
+												<a href="<?php echo site_url('ProductsController')?>"><?=$value2['cate_name']?></a>
+
+												<ul class="dl-submenu">
+													<?php
+													foreach($catename2  as $key3 => $value3){
+														if($value2['parent_cate_id']==$value3['status']){
+															?>
+															<li><a href="<?php echo site_url('ProductsController?cate_id='.$value3['cate_id'])?>"><?=$value3['cate_name']?></a></li>
+															<?php
+														}
+													}
+													?>
+
+												</ul>
+											</li>
+											<?php
+										}
+
+										?>
+
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<!-- // MOBILE MENU -->
+
+					</nav>
+					<!-- // SITE NAVIGATION MENU -->
+				</div>
+			</div>
+		</div>
+		<!-- // MAIN HEADER -->
+	</header>
 	<!-- // SITE HEADER -->
 	
 		<!-- BREADCRUMB -->
@@ -259,7 +548,7 @@
 													<a href="<?php echo base_url()?>images/women/basic/688086-0286_1.jpg" data-toggle="lightbox" class="entry-thumbnail">
 														<img src="<?php echo base_url()?>images/women/basic/688086-0286_1_t.jpg" alt="Inceptos orci hac libero" />
 													</a>
-													<h5 class="entry-title"><a href="<?php echo site_url('SingleController')?>">Inceptos orci hac libero</a></h5>
+													<h5 class="entry-title"><a href="single.php">Inceptos orci hac libero</a></h5>
 													<s class="entry-discount m-r-sm"><span class="text-sm">$ 350.00</span></s>
 													<span class="entry-price accent-color">$ 250.00</span>
 												</div>
@@ -269,7 +558,7 @@
 													<a href="<?php echo base_url()?>images/women/basic/589550-0014_1.jpg" data-toggle="lightbox" class="entry-thumbnail">
 														<img src="<?php echo base_url()?>images/women/basic/589550-0014_1_t.jpg" alt="Inceptos orci hac libero" />
 													</a>
-													<h5 class="entry-title"><a href="<?php echo site_url('SingleController')?>">Inceptos orci hac libero</a></h5>
+													<h5 class="entry-title"><a href="single.php">Inceptos orci hac libero</a></h5>
 													<span class="entry-price">$ 350.00</span>
 												</div>
 											</li>
@@ -279,13 +568,13 @@
 								<!-- // BEST SELLERS -->
 
 								<!-- PROMO -->
-								<div class="promo inverse-background" style="background: url('images/demo/Barn-Dress-Girl_t.jpg') no-repeat; background-size: auto 100%;">
+								<div class="promo inverse-background" style="background: url('<?php echo base_url()?>images/demo/Barn-Dress-Girl_t.jpg') no-repeat; background-size: auto 100%;">
 									<div class="inner text-center np">
 										<div class="ribbon">
 											<h6 class="nmb">New Arrivals</h6>
 											<h5 class="text-semibold uppercase nmb">Leather Fashion</h5>
 											<div class="space10"></div>
-											<a href="<?php echo site_url('ProductsController')?>" class="with-icon prepend-icon"><i class="iconfont-caret-right"></i><span> Shop Now</span></a>
+											<a href="products.php" class="with-icon prepend-icon"><i class="iconfont-caret-right"></i><span> Shop Now</span></a>
 										</div>
 									</div>
 								</div>
@@ -342,428 +631,91 @@
 								
 								<!-- PRODUCT LAYOUT -->
 								<div class="products-layout grid m-t-b add-cart" data-product=".product" data-thumbnail=".entry-media .thumb" data-title=".entry-title > a" data-url=".entry-title > a" data-price=".entry-price > .price">
-									
-									<div class="product" data-product-id="1" data-category="women|women-jeans|women-skirt" data-brand="brand1" data-price="250" data-colors="red|blue|black|white" data-size="S|M|L">
-										<div class="entry-media">
-											<img data-src="<?php echo base_url()?>images/women/skirt/430041-0014_1_t.jpg" alt="" class="lazyLoad thumb" />
-											<div class="hover">
-												<a href="<?php echo site_url('SingleController')?>" class="entry-url"></a>
-												<ul class="icons unstyled">
-													<li>
-														<div class="circle ribbon ribbon-sale">Sale</div>
-													</li>
-													<li>
-														<a href="<?php echo base_url()?>images/women/skirt/430041-0014_1.jpg" class="circle" data-toggle="lightbox"><i class="iconfont-search"></i></a>
-													</li>
-													<li>
-														<a href="#" class="circle add-to-cart"><i class="iconfont-shopping-cart"></i></a>
-													</li>
-												</ul>
-												<div class="rate-bar">
-													<input type="range" value="4.5" step="0.5" id="backing1" />
-													<div class="rateit" data-rateit-backingfld="#backing1" data-rateit-starwidth="12" data-rateit-starheight="12" data-rateit-resetable="false"  data-rateit-ispreset="true" data-rateit-min="0" data-rateit-max="5"></div>
-												</div>
-											</div>
-										</div>
-										<div class="entry-main">
-											<h5 class="entry-title">
-												<a href="<?php echo site_url('SingleController')?>">Inceptos orci hac libero</a>
-											</h5>
-											<div class="entry-description visible-list">
-												<p>Sed ornare cras donec litora integer curabitur orci, at nullam aliquam libero nam himenaeos, amet massa amet ut ipsum viverra mauris rhoncus neque aenean rhoncus gravida orci facilisis quis dui consectetur.</p>
-											</div>
-											<div class="entry-price">
-												<s class="entry-discount">$ 350.00</s>
-												<strong class="accent-color price">$ 250.00</strong>
-												<a href="#" class="btn btn-round btn-default add-to-cart visible-list">Add to Cart</a>
-											</div>
-											<div class="entry-links clearfix">
-												<a href="#" class="pull-left m-r">+ Add to Wishlist</a>
-												<a href="#" class="pull-right">+ Add to Compare</a>
-											</div>
-										</div>
-									</div>
-									
-									<div class="product" data-product-id="2" data-category="women|women-accessories|women-basics|women-legging|new" data-brand="brand2" data-price="450" data-colors="red|green|black|white|silver" data-size="XS|S|M">
-										<div class="entry-media">
-											<img data-src="<?php echo base_url()?>images/women/accessories/582120-0029_1_t.jpg" alt="" class="lazyLoad thumb" />
-											<div class="hover">
-												<a href="<?php echo site_url('SingleController')?>" class="entry-url"></a>
-												<ul class="icons unstyled">
-													<li>
-														<a href="<?php echo base_url()?>images/women/accessories/582120-0029_1.jpg" class="circle" data-toggle="lightbox"><i class="iconfont-search"></i></a>
-													</li>
-													<li>
-														<a href="#" class="circle add-to-cart"><i class="iconfont-shopping-cart"></i></a>
-													</li>
-												</ul>
-												<div class="rate-bar">
-													<input type="range" value="4" step="0.5" id="backing2" />
-													<div class="rateit" data-rateit-backingfld="#backing2" data-rateit-starwidth="12" data-rateit-starheight="12" data-rateit-resetable="false"  data-rateit-ispreset="true" data-rateit-min="0" data-rateit-max="5"></div>
-												</div>
-											</div>
-										</div>
-										<div class="entry-main">
-											<h5 class="entry-title">
-												<a href="<?php echo site_url('SingleController')?>">Inceptos orci hac libero</a>
-											</h5>
-											<div class="entry-description visible-list">
-												<p>Sed ornare cras donec litora integer curabitur orci, at nullam aliquam libero nam himenaeos, amet massa amet ut ipsum viverra mauris rhoncus neque aenean rhoncus gravida orci facilisis quis dui consectetur.</p>
-											</div>
-											<div class="entry-price">
-												<strong class="price">$ 350.00</strong>
-												<a href="#" class="btn btn-round btn-default add-to-cart visible-list">Add to Cart</a>
-											</div>
-											<div class="entry-links clearfix">
-												<a href="#" class="pull-left m-r">+ Add to Wishlist</a>
-												<a href="#" class="pull-right">+ Add to Compare</a>
-											</div>
-										</div>
-									</div>
-									
-									<div class="product" data-product-id="3" data-category="men|men-jacket|men-accessories|men-jumper|new" data-brand="brand2" data-price="450" data-colors="purple|brown|black|white|patternie" data-size="S|M|L|XL">
-										<div class="entry-media">
-											<img data-src="<?php echo base_url()?>images/men/accessories/255615-0014_1_t.jpg" alt="" class="lazyLoad thumb" />
-											<div class="hover">
-												<a href="<?php echo site_url('SingleController')?>" class="entry-url"></a>
-												<ul class="icons unstyled">
-													<li>
-														<div class="circle ribbon ribbon-new">New</div>
-													</li>
-													<li>
-														<a href="<?php echo base_url()?>images/men/accessories/255615-0014_1.jpg" class="circle" data-toggle="lightbox"><i class="iconfont-search"></i></a>
-													</li>
-													<li>
-														<a href="#" class="circle add-to-cart"><i class="iconfont-shopping-cart"></i></a>
-													</li>
-												</ul>
-												<div class="rate-bar">
-													<input type="range" value="3.5" step="0.5" id="backing3" />
-													<div class="rateit" data-rateit-backingfld="#backing3" data-rateit-starwidth="12" data-rateit-starheight="12" data-rateit-resetable="false"  data-rateit-ispreset="true" data-rateit-min="0" data-rateit-max="5"></div>
-												</div>
-											</div>
-										</div>
-										<div class="entry-main">
-											<h5 class="entry-title">
-												<a href="<?php echo site_url('SingleController')?>">Inceptos orci hac libero</a>
-											</h5>
-											<div class="entry-description visible-list">
-												<p>Sed ornare cras donec litora integer curabitur orci, at nullam aliquam libero nam himenaeos, amet massa amet ut ipsum viverra mauris rhoncus neque aenean rhoncus gravida orci facilisis quis dui consectetur.</p>
-											</div>
-											<div class="entry-price">
-												<strong class="price">$ 450.00</strong>
-												<a href="#" class="btn btn-round btn-default add-to-cart visible-list">Add to Cart</a>
-											</div>
-											<div class="entry-links clearfix">
-												<a href="#" class="pull-left m-r">+ Add to Wishlist</a>
-												<a href="#" class="pull-right">+ Add to Compare</a>
-											</div>
-										</div>
-									</div>
-									
-									<div class="product" data-product-id="4" data-category="men|men-jacket|men-accessories|men-jeans|men-jumper" data-brand="brand3" data-price="350" data-colors="purple|brown|black|white|red" data-size="S|M|L|XL|XXL">
-										<div class="entry-media">
-											<img data-src="<?php echo base_url()?>images/men/blazer/677326-0014_1_t.jpg" alt="" class="lazyLoad thumb" />
-											<div class="hover">
-												<a href="<?php echo site_url('SingleController')?>" class="entry-url"></a>
-												<ul class="icons unstyled">
-													<li>
-														<a href="<?php echo base_url()?>images/men/blazer/677326-0014_1.jpg" class="circle" data-toggle="lightbox"><i class="iconfont-search"></i></a>
-													</li>
-													<li>
-														<a href="#" class="circle add-to-cart"><i class="iconfont-shopping-cart"></i></a>
-													</li>
-												</ul>
-												<div class="rate-bar">
-													<input type="range" value="5" step="0.5" id="backing4" />
-													<div class="rateit" data-rateit-backingfld="#backing4" data-rateit-starwidth="12" data-rateit-starheight="12" data-rateit-resetable="false"  data-rateit-ispreset="true" data-rateit-min="0" data-rateit-max="5"></div>
-												</div>
-											</div>
-										</div>
-										<div class="entry-main">
-											<h5 class="entry-title">
-												<a href="<?php echo site_url('SingleController')?>">Inceptos orci hac libero</a>
-											</h5>
-											<div class="entry-description visible-list">
-												<p>Sed ornare cras donec litora integer curabitur orci, at nullam aliquam libero nam himenaeos, amet massa amet ut ipsum viverra mauris rhoncus neque aenean rhoncus gravida orci facilisis quis dui consectetur.</p>
-											</div>
-											<div class="entry-price">
-												<strong class="price">$ 350.00</strong>
-												<a href="#" class="btn btn-round btn-default add-to-cart visible-list">Add to Cart</a>
-											</div>
-											<div class="entry-links clearfix">
-												<a href="#" class="pull-left m-r">+ Add to Wishlist</a>
-												<a href="#" class="pull-right">+ Add to Compare</a>
-											</div>
-										</div>
-									</div>
-									
-									<div class="product" data-product-id="5" data-category="men|men-shoe|men-accessories|men-jean|new" data-brand="brand4" data-price="250" data-colors="brown|silver|black|green|red" data-size="L|XL|XXL">
-										<div class="entry-media">
-											<img data-src="<?php echo base_url()?>images/men/shoes/000312-2259_1_t.jpg" alt="" class="lazyLoad thumb" />
-											<div class="hover">
-												<a href="<?php echo site_url('SingleController')?>" class="entry-url"></a>
-												<ul class="icons unstyled">
-													<li>
-														<div class="circle ribbon ribbon-sale">Sale</div>
-													</li>
-													<li>
-														<a href="<?php echo base_url()?>images/men/shoes/000312-2259_1.jpg" class="circle" data-toggle="lightbox"><i class="iconfont-search"></i></a>
-													</li>
-													<li>
-														<a href="#" class="circle add-to-cart"><i class="iconfont-shopping-cart"></i></a>
-													</li>
-												</ul>
-												<div class="rate-bar">
-													<input type="range" value="4.5" step="0.5" id="backing5" />
-													<div class="rateit" data-rateit-backingfld="#backing5" data-rateit-starwidth="12" data-rateit-starheight="12" data-rateit-resetable="false"  data-rateit-ispreset="true" data-rateit-min="0" data-rateit-max="5"></div>
-												</div>
-											</div>
-										</div>
-										<div class="entry-main">
-											<h5 class="entry-title">
-												<a href="<?php echo site_url('SingleController')?>">Inceptos orci hac libero</a>
-											</h5>
-											<div class="entry-description visible-list">
-												<p>Sed ornare cras donec litora integer curabitur orci, at nullam aliquam libero nam himenaeos, amet massa amet ut ipsum viverra mauris rhoncus neque aenean rhoncus gravida orci facilisis quis dui consectetur.</p>
-											</div>
-											<div class="entry-price">
-												<s class="entry-discount">$ 350.00</s>
-												<strong class="accent-color price">$ 250.00</strong>
-												<a href="#" class="btn btn-round btn-default add-to-cart visible-list">Add to Cart</a>
-											</div>
-											<div class="entry-links clearfix">
-												<a href="#" class="pull-left m-r">+ Add to Wishlist</a>
-												<a href="#" class="pull-right">+ Add to Compare</a>
-											</div>
-										</div>
-									</div>
-									
-									<div class="product" data-product-id="6" data-category="women|women-legging|women-dresses|women-jeans|women-skirt" data-brand="brand5" data-price="350" data-colors="white|silver|green|red|blue" data-size="XS|S">
-										<div class="entry-media">
-											<img data-src="<?php echo base_url()?>images/women/jeans/220008-0054_1_t.jpg" alt="" class="lazyLoad thumb" />
-											<div class="hover">
-												<a href="<?php echo site_url('SingleController')?>" class="entry-url"></a>
-												<ul class="icons unstyled">
-													<li>
-														<a href="<?php echo base_url()?>images/women/jeans/220008-0054_1.jpg" class="circle" data-toggle="lightbox"><i class="iconfont-search"></i></a>
-													</li>
-													<li>
-														<a href="#" class="circle add-to-cart"><i class="iconfont-shopping-cart"></i></a>
-													</li>
-												</ul>
-												<div class="rate-bar">
-													<input type="range" value="4" step="0.5" id="backing6" />
-													<div class="rateit" data-rateit-backingfld="#backing6" data-rateit-starwidth="12" data-rateit-starheight="12" data-rateit-resetable="false"  data-rateit-ispreset="true" data-rateit-min="0" data-rateit-max="5"></div>
-												</div>
-											</div>
-										</div>
-										<div class="entry-main">
-											<h5 class="entry-title">
-												<a href="<?php echo site_url('SingleController')?>">Inceptos orci hac libero</a>
-											</h5>
-											<div class="entry-description visible-list">
-												<p>Sed ornare cras donec litora integer curabitur orci, at nullam aliquam libero nam himenaeos, amet massa amet ut ipsum viverra mauris rhoncus neque aenean rhoncus gravida orci facilisis quis dui consectetur.</p>
-											</div>
-											<div class="entry-price">
-												<strong class="price">$ 350.00</strong>
-												<a href="#" class="btn btn-round btn-default add-to-cart visible-list">Add to Cart</a>
-											</div>
-											<div class="entry-links clearfix">
-												<a href="#" class="pull-left m-r">+ Add to Wishlist</a>
-												<a href="#" class="pull-right">+ Add to Compare</a>
-											</div>
-										</div>
-									</div>
-									
-									<div class="product" data-product-id="7" data-category="women|women-swimwear|best|new" data-brand="brand5" data-price="150" data-colors="white|black|patternie" data-size="XS|S">
-										<div class="entry-media">
-											<img data-src="<?php echo base_url()?>images/women/swimwear/116796-0001_1_t.jpg" alt="" class="lazyLoad thumb" />
-											<div class="hover">
-												<a href="<?php echo site_url('SingleController')?>" class="entry-url"></a>
-												<ul class="icons unstyled">
-													<li>
-														<div class="circle ribbon ribbon-new">New</div>
-													</li>
-													<li>
-														<a href="<?php echo base_url()?>images/women/swimwear/116796-0001_1.jpg" class="circle" data-toggle="lightbox"><i class="iconfont-search"></i></a>
-													</li>
-													<li>
-														<a href="#" class="circle add-to-cart"><i class="iconfont-shopping-cart"></i></a>
-													</li>
-												</ul>
-												<div class="rate-bar">
-													<input type="range" value="3.5" step="0.5" id="backing7" />
-													<div class="rateit" data-rateit-backingfld="#backing7" data-rateit-starwidth="12" data-rateit-starheight="12" data-rateit-resetable="false"  data-rateit-ispreset="true" data-rateit-min="0" data-rateit-max="5"></div>
-												</div>
-											</div>
-										</div>
-										<div class="entry-main">
-											<h5 class="entry-title">
-												<a href="<?php echo site_url('SingleController')?>">Inceptos orci hac libero</a>
-											</h5>
-											<div class="entry-description visible-list">
-												<p>Sed ornare cras donec litora integer curabitur orci, at nullam aliquam libero nam himenaeos, amet massa amet ut ipsum viverra mauris rhoncus neque aenean rhoncus gravida orci facilisis quis dui consectetur.</p>
-											</div>
-											<div class="entry-price">
-												<strong class="price">$ 150.00</strong>
-												<a href="#" class="btn btn-round btn-default add-to-cart visible-list">Add to Cart</a>
-											</div>
-											<div class="entry-links clearfix">
-												<a href="#" class="pull-left m-r">+ Add to Wishlist</a>
-												<a href="#" class="pull-right">+ Add to Compare</a>
-											</div>
-										</div>
-									</div>
-									
-									<div class="product" data-product-id="8" data-category="women|women-dresses|best" data-brand="brand4" data-price="350" data-colors="white|black" data-size="XS|S|L">
-										<div class="entry-media">
-											<img data-src="<?php echo base_url()?>images/women/dress/278638-0083_1_t.jpg" alt="" class="lazyLoad thumb" />
-											<div class="hover">
-												<a href="<?php echo site_url('SingleController')?>" class="entry-url"></a>
-												<ul class="icons unstyled">
-													<li>
-														<a href="<?php echo base_url()?>images/women/dress/278638-0083_1.jpg" class="circle" data-toggle="lightbox"><i class="iconfont-search"></i></a>
-													</li>
-													<li>
-														<a href="#" class="circle add-to-cart"><i class="iconfont-shopping-cart"></i></a>
-													</li>
-												</ul>
-												<div class="rate-bar">
-													<input type="range" value="5" step="0.5" id="backing8" />
-													<div class="rateit" data-rateit-backingfld="#backing8" data-rateit-starwidth="12" data-rateit-starheight="12" data-rateit-resetable="false"  data-rateit-ispreset="true" data-rateit-min="0" data-rateit-max="5"></div>
-												</div>
-											</div>
-										</div>
-										<div class="entry-main">
-											<h5 class="entry-title">
-												<a href="<?php echo site_url('SingleController')?>">Inceptos orci hac libero</a>
-											</h5>
-											<div class="entry-description visible-list">
-												<p>Sed ornare cras donec litora integer curabitur orci, at nullam aliquam libero nam himenaeos, amet massa amet ut ipsum viverra mauris rhoncus neque aenean rhoncus gravida orci facilisis quis dui consectetur.</p>
-											</div>
-											<div class="entry-price">
-												<strong class="price">$ 350.00</strong>
-												<a href="#" class="btn btn-round btn-default add-to-cart visible-list">Add to Cart</a>
-											</div>
-											<div class="entry-links clearfix">
-												<a href="#" class="pull-left m-r">+ Add to Wishlist</a>
-												<a href="#" class="pull-right">+ Add to Compare</a>
-											</div>
-										</div>
-									</div>
-							
-									<div class="product" data-product-id="9" data-category="men|men-accessories|men-jean|best|new" data-brand="brand5" data-price="850" data-colors="white|black" data-size="L|XL|XXL">
-										<div class="entry-media">
-											<img data-src="<?php echo base_url()?>images/men/accessories/000095-0014_2_t.jpg" alt="" class="lazyLoad thumb" />
-											<div class="hover">
-												<a href="<?php echo site_url('SingleController')?>" class="entry-url"></a>
-												<ul class="icons unstyled">
-													<li>
-														<a href="<?php echo base_url()?>images/men/accessories/000095-0014_2.jpg" class="circle" data-toggle="lightbox"><i class="iconfont-search"></i></a>
-													</li>
-													<li>
-														<a href="#" class="circle add-to-cart"><i class="iconfont-shopping-cart"></i></a>
-													</li>
-												</ul>
-												<div class="rate-bar">
-													<input type="range" value="5" step="0.5" id="backing9" />
-													<div class="rateit" data-rateit-backingfld="#backing9" data-rateit-starwidth="12" data-rateit-starheight="12" data-rateit-resetable="false"  data-rateit-ispreset="true" data-rateit-min="0" data-rateit-max="5"></div>
-												</div>
-											</div>
-										</div>
-										<div class="entry-main">
-											<h5 class="entry-title">
-												<a href="<?php echo site_url('SingleController')?>">Inceptos orci hac libero</a>
-											</h5>
-											<div class="entry-description visible-list">
-												<p>Sed ornare cras donec litora integer curabitur orci, at nullam aliquam libero nam himenaeos, amet massa amet ut ipsum viverra mauris rhoncus neque aenean rhoncus gravida orci facilisis quis dui consectetur.</p>
-											</div>
-											<div class="entry-price">
-												<strong class="price">$ 850.00</strong>
-												<a href="#" class="btn btn-round btn-default add-to-cart visible-list">Add to Cart</a>
-											</div>
-											<div class="entry-links clearfix">
-												<a href="#" class="pull-left m-r">+ Add to Wishlist</a>
-												<a href="#" class="pull-right">+ Add to Compare</a>
-											</div>
-										</div>
-									</div>
-							
-									<div class="product" data-product-id="10" data-category="women|women-basics|new" data-brand="brand1" data-price="550" data-colors="white|black|patternie" data-size="XS|S">
-										<div class="entry-media">
-											<img data-src="<?php echo base_url()?>images/women/basic/848051-0014_1_t.jpg" alt="" class="lazyLoad thumb" />
-											<div class="hover">
-												<a href="<?php echo site_url('SingleController')?>" class="entry-url"></a>
-												<ul class="icons unstyled">
-													<li>
-														<a href="<?php echo base_url()?>images/women/basic/848051-0014_1.jpg" class="circle" data-toggle="lightbox"><i class="iconfont-search"></i></a>
-													</li>
-													<li>
-														<a href="#" class="circle add-to-cart"><i class="iconfont-shopping-cart"></i></a>
-													</li>
-												</ul>
-												<div class="rate-bar">
-													<input type="range" value="3.5" step="0.5" id="backing10" />
-													<div class="rateit" data-rateit-backingfld="#backing10" data-rateit-starwidth="12" data-rateit-starheight="12" data-rateit-resetable="false"  data-rateit-ispreset="true" data-rateit-min="0" data-rateit-max="5"></div>
-												</div>
-											</div>
-										</div>
-										<div class="entry-main">
-											<h5 class="entry-title">
-												<a href="<?php echo site_url('SingleController')?>">Inceptos orci hac libero</a>
-											</h5>
-											<div class="entry-description visible-list">
-												<p>Sed ornare cras donec litora integer curabitur orci, at nullam aliquam libero nam himenaeos, amet massa amet ut ipsum viverra mauris rhoncus neque aenean rhoncus gravida orci facilisis quis dui consectetur.</p>
-											</div>
-											<div class="entry-price">
-												<strong class="price">$ 550.00</strong>
-												<a href="#" class="btn btn-round btn-default add-to-cart visible-list">Add to Cart</a>
-											</div>
-											<div class="entry-links clearfix">
-												<a href="#" class="pull-left m-r">+ Add to Wishlist</a>
-												<a href="#" class="pull-right">+ Add to Compare</a>
-											</div>
-										</div>
-									</div>
-									
-									<div class="product" data-product-id="11" data-category="women|women-basics|makeup" data-brand="brand3" data-price="700" data-colors="white|black|red|green|brown" data-size="XS|S">
-										<div class="entry-media">
-											<img data-src="<?php echo base_url()?>images/women/basic/848099-0067_1_t.jpg" alt="" class="lazyLoad thumb" />
-											<div class="hover">
-												<a href="<?php echo site_url('SingleController')?>" class="entry-url"></a>
-												<ul class="icons unstyled">
-													<li>
-														<a href="<?php echo base_url()?>images/women/basic/848099-0067_1.jpg" class="circle" data-toggle="lightbox"><i class="iconfont-search"></i></a>
-													</li>
-													<li>
-														<a href="#" class="circle add-to-cart"><i class="iconfont-shopping-cart"></i></a>
-													</li>
-												</ul>
-												<div class="rate-bar">
-													<input type="range" value="2.5" step="0.5" id="backing11" />
-													<div class="rateit" data-rateit-backingfld="#backing11" data-rateit-starwidth="12" data-rateit-starheight="12" data-rateit-resetable="false"  data-rateit-ispreset="true" data-rateit-min="0" data-rateit-max="5"></div>
-												</div>
-											</div>
-										</div>
-										<div class="entry-main">
-											<h5 class="entry-title">
-												<a href="<?php echo site_url('SingleController')?>">Inceptos orci hac libero</a>
-											</h5>
-											<div class="entry-description visible-list">
-												<p>Sed ornare cras donec litora integer curabitur orci, at nullam aliquam libero nam himenaeos, amet massa amet ut ipsum viverra mauris rhoncus neque aenean rhoncus gravida orci facilisis quis dui consectetur.</p>
-											</div>
-											<div class="entry-price">
-												<strong class="price">$ 700.00</strong>
-												<a href="#" class="btn btn-round btn-default add-to-cart visible-list">Add to Cart</a>
-											</div>
-											<div class="entry-links clearfix">
-												<a href="#" class="pull-left m-r">+ Add to Wishlist</a>
-												<a href="#" class="pull-right">+ Add to Compare</a>
-											</div>
-										</div>
-									</div>
-									
+
+									<?php
+									$baseurl = base_url();
+
+
+
+												foreach ($item as $value) {
+													if ( $_GET['cate_id']==$value['cate_id_child']) {
+														$price = $value['price'];
+														$item_name = $value['item_name'];
+														$imgs = strstr($value['imgs'], '__');
+														$lastImgs = $baseurl . '/img_1/' . substr($imgs, 2);
+
+														?>
+														<div class="product"
+															 data-category="women|women-jeans|women-skirt"
+															 data-brand="brand1"
+															 data-price="250" data-colors="red|blue|black|white"
+															 data-size="S|M|L">
+															<div class="entry-media">
+																<img
+																	data-src="<?= $lastImgs ?>"
+																	alt="" class="lazyLoad thumb"/>
+																<div class="hover">
+																	<a href="<?php echo site_url('SingleController?item_id=' . $value['item_id']) ?>"
+																	   class="entry-url"></a>
+																	<ul class="icons unstyled">
+																		<li>
+																			<div class="circle ribbon ribbon-sale">Sale
+																			</div>
+																		</li>
+																		<li>
+																			<a href="<?= $lastImgs ?>"
+																			   class="circle" data-toggle="lightbox"><i
+																					class="iconfont-search"></i></a>
+																		</li>
+																		<li>
+																			<a href="#" class="circle add-to-cart"><i
+																					class="iconfont-shopping-cart"></i></a>
+																		</li>
+																	</ul>
+																	<div class="rate-bar">
+																		<input type="range" value="4.5" step="0.5"
+																			   id="backing1"/>
+																		<div class="rateit"
+																			 data-rateit-backingfld="#backing1"
+																			 data-rateit-starwidth="12"
+																			 data-rateit-starheight="12"
+																			 data-rateit-resetable="false"
+																			 data-rateit-ispreset="true"
+																			 data-rateit-min="0"
+																			 data-rateit-max="5"></div>
+																	</div>
+																</div>
+															</div>
+															<div class="entry-main">
+																<h5 class="entry-title">
+																	<a href="<?php echo site_url('SingleController?item_id=' . $value['item_id']) ?>"><?= $item_name ?></a>
+																</h5>
+																<div class="entry-description visible-list">
+																	<p><?=$value['detail']?></p>
+																</div>
+																<div class="entry-price">
+																	<s class="entry-discount">$ <?= $price ?></s>
+																	<strong
+																		class="accent-color price">$ <?= $price - 10 ?></strong>
+																	<a href="#"
+																	   class="btn btn-round btn-default add-to-cart visible-list">Add
+																		to
+																		Cart</a>
+																</div>
+																<div class="entry-links clearfix">
+																	<a href="#" class="pull-left m-r">+ Add to
+																		Wishlist</a>
+																	<a href="#" class="pull-right">+ Add to Compare</a>
+																</div>
+															</div>
+														</div>
+														<?php
+
+													}
+										}
+									?>
+
+
 								</div>
 								<!-- // PRODUCT LAYOUT -->
 							</section>

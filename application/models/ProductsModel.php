@@ -1,18 +1,24 @@
 <?php
 
-class RegistModel extends CI_Model
+class ProductsModel extends CI_Model
 {
 
-    function RegistModel()
+    function ProductsModel()
     {
         $this->load->database();
     }
 
-    function insertUser($table,$login_name,$passwd,$userImg,$tel,$loginaddress){
-        $sql = "insert into $table(login_name,passwd,userImg,tel,loginaddress) values('$login_name','$passwd','$userImg','$tel','$loginaddress')";
+    function getItem(){
+        $sql = "select * from item ";
         $query = $this->db->query($sql);
-        echo $query;
+        return $query->result_array();
     }
+    function getCate(){
+        $sql = "select * from cate ";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
     function getFirstProject(){
         $sql="select parent_cate_id,cate_name from cate where  parent_cate_id = 2 or  parent_cate_id = 3 or  parent_cate_id = 4";
         $query = $this->db->query($sql);

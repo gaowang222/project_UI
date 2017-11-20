@@ -9,7 +9,10 @@ class RegistController extends CI_Controller {
     }
     public function index()
     {
-        $this->load->view('regist');
+        $data['catename']=$this->RegistModel->getFirstProject();
+        $data['catename2']=$this->RegistModel->getFirstProject2('cate');
+
+        $this->load->view('regist',$data);
     }
     //注册生成验证码
     function yzm_regist(){

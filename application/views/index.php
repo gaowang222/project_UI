@@ -51,6 +51,9 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12 col-sm-6 col-md-7">
+						<!-- CONTACT INFO -->
+
+						<!-- // CONTACT INFO -->
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-5">
 						<ul class="actions unstyled clearfix">
@@ -145,7 +148,6 @@
 							<li>
 								<a href="<?php echo site_url('ProductsController')?>">女装</a>
 								<div class="mega-menu" data-col-lg="9" data-col-md="12">
-
 									<div class="row">
 										<?php
 										foreach ($catename as $key => $value) {
@@ -158,7 +160,7 @@
 														//var_dump($catename2)  ;
 														if($value['parent_cate_id']==$value1['status']){
 															?>
-															<li><a href="<?php echo site_url('ProductsController')?>"><?=$value1['cate_name']?></a></li>
+															<li><a href="<?php echo site_url('ProductsController?cate_id='.$value1['cate_id'])?>"><?=$value1['cate_name']?></a></li>
 
 															<?php
 														}
@@ -191,7 +193,6 @@
 
 								<!-- MEGA MENU -->
 								<div class="mega-menu" data-col-lg="9" data-col-md="12">
-
 									<div class="row">
 										<?php
 										foreach ($catename as $key => $value) {
@@ -204,7 +205,7 @@
 														//var_dump($catename2)  ;
 														if($value['parent_cate_id']==$value1['status']){
 															?>
-															<li><a href="<?php echo site_url('ProductsController')?>"><?=$value1['cate_name']?></a></li>
+															<li><a href="<?php echo site_url('ProductsController?cate_id='.$value1['cate_id'])?>"><?=$value1['cate_name']?></a></li>
 
 															<?php
 														}
@@ -232,6 +233,7 @@
 										</div>
 									</div>
 								</div>
+
 								<!-- // MEGA MENU -->
 
 							</li>
@@ -245,7 +247,7 @@
 								<a href="<?php echo site_url('StorelocatorController')?>">商店位置</a>
 							</li>
 							<li>
-								<a href="<?php echo site_url('ContactusController')?>">联系我们</a>
+								<a href="<?php echo site_url('ContactusController')?>">个人中心</a>
 							</li>
 							<li>
 								<a href="<?php echo site_url('LoginController')?>">登录/注册</a>
@@ -258,11 +260,11 @@
 							<ul class="dl-menu">
 
 								<li class="active">
-									<a href="<?php echo site_url('IndexController')?>">首页</a>
+									<a href="javsacript:void(0);">首页</a>
 								</li>
 
 								<li>
-									<a href="<?php echo site_url('IndexController')?>">女装</a>
+									<a href="javsacript:void(0);">女装</a>
 									<ul class="dl-submenu">
 										<?php
 										foreach($catename as $key2 => $value2){
@@ -276,7 +278,7 @@
 													foreach($catename2  as $key3 => $value3){
 														if($value2['parent_cate_id']==$value3['status']){
 															?>
-															<li><a href="<?php echo site_url('ProductsController')?>"><?=$value3['cate_name']?></a></li>
+															<li><a href="<?php echo site_url('ProductsController?cate_id='.$value3['cate_id'])?>"><?=$value3['cate_name']?></a></li>
 															<?php
 														}
 													}
@@ -307,7 +309,7 @@
 													foreach($catename2  as $key3 => $value3){
 														if($value2['parent_cate_id']==$value3['status']){
 															?>
-															<li><a href="<?php echo site_url('ProductsController')?>"><?=$value3['cate_name']?></a></li>
+															<li><a href="<?php echo site_url('ProductsController?cate_id='.$value3['cate_id'])?>"><?=$value3['cate_name']?></a></li>
 															<?php
 														}
 													}
@@ -333,6 +335,10 @@
 		</div>
 		<!-- // MAIN HEADER -->
 	</header>
+	<!-- // SITE HEADER -->
+
+
+
 	<!-- HOMEPAGE SLIDER -->
 	<div id="home-slider">
 		<div class="flexslider">
