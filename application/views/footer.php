@@ -80,9 +80,9 @@
                     <div class="pull-right">
                         <div class="vmid">
                             <span class="uppercase">接受付款&emsp;</span>
-                            <a href="#"><img src="<?php echo base_url()?>img/visacard.png" alt="" width="40" /></a>
-                            <a href="#"><img src="<?php echo base_url()?>img/mastercard.png" alt="" width="40" /></a>
-                            <a href="#"><img src="<?php echo base_url()?>img/paypal.png" alt="" width="40" /></a>
+                            <a href="#"><img src="<?php echo base_url()?>img/img/visacard.png" alt="" width="40" /></a>
+                            <a href="#"><img src="<?php echo base_url()?>img/img/mastercard.png" alt="" width="40" /></a>
+                            <a href="#"><img src="<?php echo base_url()?>img/img/paypal.png" alt="" width="40" /></a>
                         </div>
                     </div>
                 </div>

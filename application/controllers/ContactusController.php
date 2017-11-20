@@ -11,6 +11,8 @@ class ContactusController extends CI_Controller {
     public function index()
     {
         $data['usermsg'] =$this->ContactusModel->getUserMsg('login');
+        $data['catename']=$this->ContactusModel->getFirstProject('cate');
+        $data['catename2']=$this->ContactusModel->getFirstProject2('cate');
         $this->load->view('contactus',$data);
     }
 }
