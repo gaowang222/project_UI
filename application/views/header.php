@@ -101,7 +101,6 @@
                         <li>
                             <a href="<?php echo site_url('ProductsController')?>">女装</a>
                             <div class="mega-menu" data-col-lg="9" data-col-md="12">
-
                                 <div class="row">
                                     <?php
                                     foreach ($catename as $key => $value) {
@@ -114,7 +113,7 @@
                                                     //var_dump($catename2)  ;
                                                     if($value['parent_cate_id']==$value1['status']){
                                                         ?>
-                                                        <li><a href="<?php echo site_url('ProductsController')?>"><?=$value1['cate_name']?></a></li>
+                                                        <li><a href="<?php echo site_url('ProductsController?cate_id='.$value1['cate_id'])?>"><?=$value1['cate_name']?></a></li>
 
                                                         <?php
                                                     }
@@ -142,11 +141,11 @@
                                     </div>
                                 </div>
                             </div>
-                        </li>
                         <li>
                             <a href="<?php echo site_url('ProductsController')?>">男装</a>
-                            <div class="mega-menu" data-col-lg="9" data-col-md="12">
 
+                            <!-- MEGA MENU -->
+                            <div class="mega-menu" data-col-lg="9" data-col-md="12">
                                 <div class="row">
                                     <?php
                                     foreach ($catename as $key => $value) {
@@ -159,7 +158,7 @@
                                                     //var_dump($catename2)  ;
                                                     if($value['parent_cate_id']==$value1['status']){
                                                         ?>
-                                                        <li><a href="<?php echo site_url('ProductsController')?>"><?=$value1['cate_name']?></a></li>
+                                                        <li><a href="<?php echo site_url('ProductsController?cate_id='.$value1['cate_id'])?>"><?=$value1['cate_name']?></a></li>
 
                                                         <?php
                                                     }
@@ -188,9 +187,14 @@
                                 </div>
                             </div>
 
-                            <!-- MEGA MENU -->
+                            <!-- // MEGA MENU -->
 
                         </li>
+
+
+                        <!-- MEGA MENU -->
+
+
 
                         <li>
                             <a href="<?php echo site_url('StorelocatorController')?>">商店位置</a>
@@ -207,59 +211,70 @@
                     <div id="mobile-menu" class="dl-menuwrapper visible-xs visible-sm">
                         <button class="dl-trigger"><i class="iconfont-reorder round-icon"></i></button>
                         <ul class="dl-menu">
-                            <?php
-                            foreach ($item as $key => $value) {
-                                echo $value['cate_name'];
 
-                                ?>
-                                <li class="active">
-                                    <a href="javsacript:void(0);">首页</a>
-                                </li>
-                                <?php
-                            }
-                            ?>
+                            <li class="active">
+                                <a href="javsacript:void(0);">首页</a>
+                            </li>
+
                             <li>
                                 <a href="javsacript:void(0);">女装</a>
+                                <ul class="dl-submenu">
+                                    <?php
+                                    foreach($catename as $key2 => $value2){
+                                        ?>
 
+                                        <li>
+                                            <a href="<?php echo site_url('ProductsController')?>"><?=$value2['cate_name']?></a>
+
+                                            <ul class="dl-submenu">
+                                                <?php
+                                                foreach($catename2  as $key3 => $value3){
+                                                    if($value2['parent_cate_id']==$value3['status']){
+                                                        ?>
+                                                        <li><a href="<?php echo site_url('ProductsController?cate_id='.$value3['cate_id'])?>"><?=$value3['cate_name']?></a></li>
+                                                        <?php
+                                                    }
+                                                }
+                                                ?>
+
+                                            </ul>
+                                        </li>
+                                        <?php
+                                    }
+
+                                    ?>
+
+                                </ul>
                             </li>
                             <li>
                                 <a href="javsacript:void(0);">男装</a>
 
                                 <ul class="dl-submenu">
-                                    <li>
-                                        <a href="<?php echo site_url('ProductsController')?>">服装</a>
+                                    <?php
+                                    foreach($catename as $key2 => $value2){
+                                        ?>
 
-                                        <ul class="dl-submenu">
-                                            <li><a href="<?php echo site_url('ProductsController')?>">休闲服</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">晚礼服</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">礼服</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">女  牛仔裤</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">男牛 仔裤</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">秋天的风格</a></li
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="<?php echo site_url('ProductsController')?>">配饰</a>
-                                        <ul class="dl-submenu">
-                                            <li><a href="<?php echo site_url('ProductsController')?>">休闲服</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">晚礼服</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">礼服</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">女 牛仔裤</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">男牛 仔裤</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">秋天的风格</a></li
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="<?php echo site_url('ProductsController')?>">品牌</a>
-                                        <ul class="dl-submenu">
-                                            <li><a href="<?php echo site_url('ProductsController')?>">休闲服</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">晚礼服</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">礼服</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">女裤</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">男牛仔裤</a></li>
-                                            <li><a href="<?php echo site_url('ProductsController')?>">秋天的风格</a></li
-                                        </ul>
-                                    </li>
+                                        <li>
+                                            <a href="<?php echo site_url('ProductsController')?>"><?=$value2['cate_name']?></a>
+
+                                            <ul class="dl-submenu">
+                                                <?php
+                                                foreach($catename2  as $key3 => $value3){
+                                                    if($value2['parent_cate_id']==$value3['status']){
+                                                        ?>
+                                                        <li><a href="<?php echo site_url('ProductsController?cate_id='.$value3['cate_id'])?>"><?=$value3['cate_name']?></a></li>
+                                                        <?php
+                                                    }
+                                                }
+                                                ?>
+
+                                            </ul>
+                                        </li>
+                                        <?php
+                                    }
+
+                                    ?>
+
                                 </ul>
                             </li>
                         </ul>
