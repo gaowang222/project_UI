@@ -6,9 +6,11 @@ class ContactusController extends CI_Controller {
     {
         parent::__construct();
         $this->load->helper('url');
+        $this->load->model('ContactusModel');
     }
     public function index()
     {
-        $this->load->view('contactus');
+        $data['usermsg'] =$this->ContactusModel->getUserMsg('login');
+        $this->load->view('contactus',$data);
     }
 }
