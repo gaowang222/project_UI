@@ -148,92 +148,12 @@
 							</li>
 							<li>
 								<a href="<?php echo site_url('IndexController')?>">女装</a>
-								<div class="mega-menu" data-col-lg="9" data-col-md="12">
-									<div class="row">
-										<?php
-										foreach ($catename as $key => $value) {
-											?>
-											<div class="col-md-3">
-												<h4 class="menu-title"><?=$value['cate_name']?></h4>
-												<ul class="mega-sub">
-													<?php
-													foreach ($catename2 as $key1 => $value1) {
-														//var_dump($catename2)  ;
-														if($value['parent_cate_id']==$value1['status']){
-															?>
-															<li><a href="<?php echo site_url('ProductsController?cate_id='.$value1['cate_id'])?>"><?=$value1['cate_name']?></a></li>
 
-															<?php
-														}
-													}
-													?>
-												</ul>
-											</div>
-											<?php
-										}
-										?>
-										<div class="col-md-3">
-											<div class="carousel slide m-b" data-ride="carousel">
-												<div class="carousel-inner">
-													<div class="item active">
-														<img src="<?php echo base_url()?>images/men/slide1.jpg" alt="" />
-													</div>
-													<div class="item">
-														<img src="<?php echo base_url()?>images/men/slide2.jpg" alt="" />
-													</div>
-												</div>
-											</div>
-											<h5 class="text-semibold uppercase m-b-sm">主打产品</h5>
-											<p>Lorem ipsum,dolor sit，奉献给了elit。阿提姆·涅克，布兰迪特·斯克伦斯克.</p>
-											<a href="<?php echo site_url('ProductsController')?>" class="btn btn-default btn-round">去商店 →</a>
-										</div>
-									</div>
-								</div>
 							<li>
 								<a href="<?php echo site_url('IndexController')?>">男装</a>
 
 								<!-- MEGA MENU -->
-								<div class="mega-menu" data-col-lg="9" data-col-md="12">
-									<div class="row">
-										<?php
-										foreach ($catename as $key => $value) {
-											?>
-											<div class="col-md-3">
-												<h4 class="menu-title"><?=$value['cate_name']?></h4>
-												<ul class="mega-sub">
-													<?php
-													foreach ($catename2 as $key1 => $value1) {
-														//var_dump($catename2)  ;
-														if($value['parent_cate_id']==$value1['status']){
-															?>
-															<li><a href="<?php echo site_url('ProductsController?cate_id='.$value1['cate_id'])?>"><?=$value1['cate_name']?></a></li>
 
-															<?php
-														}
-													}
-													?>
-												</ul>
-											</div>
-											<?php
-										}
-										?>
-										<div class="col-md-3">
-											<div class="carousel slide m-b" data-ride="carousel">
-												<div class="carousel-inner">
-													<div class="item active">
-														<img src="<?php echo base_url()?>images/men/slide1.jpg" alt="" />
-													</div>
-													<div class="item">
-														<img src="<?php echo base_url()?>images/men/slide2.jpg" alt="" />
-													</div>
-												</div>
-											</div>
-											<h5 class="text-semibold uppercase m-b-sm">主打产品</h5>
-											<p>Lorem ipsum,dolor sit，奉献给了elit。阿提姆·涅克，布兰迪特·斯克伦斯克.</p>
-											<a href="<?php echo site_url('ProductsController')?>" class="btn btn-default btn-round">去商店 →</a>
-										</div>
-									</div>
-								</div>
 
 								<!-- // MEGA MENU -->
 
@@ -266,64 +186,11 @@
 
 								<li>
 									<a href="javsacript:void(0);">女装</a>
-									<ul class="dl-submenu">
-										<?php
-										foreach($catename as $key2 => $value2){
-											?>
 
-											<li>
-												<a href="<?php echo site_url('ProductsController')?>"><?=$value2['cate_name']?></a>
-
-												<ul class="dl-submenu">
-													<?php
-													foreach($catename2  as $key3 => $value3){
-														if($value2['parent_cate_id']==$value3['status']){
-															?>
-															<li><a href="<?php echo site_url('ProductsController?cate_id='.$value3['cate_id'])?>"><?=$value3['cate_name']?></a></li>
-															<?php
-														}
-													}
-													?>
-
-												</ul>
-											</li>
-											<?php
-										}
-
-										?>
-
-									</ul>
 								</li>
 								<li>
 									<a href="javsacript:void(0);">男装</a>
 
-									<ul class="dl-submenu">
-										<?php
-										foreach($catename as $key2 => $value2){
-											?>
-
-											<li>
-												<a href="<?php echo site_url('ProductsController')?>"><?=$value2['cate_name']?></a>
-
-												<ul class="dl-submenu">
-													<?php
-													foreach($catename2  as $key3 => $value3){
-														if($value2['parent_cate_id']==$value3['status']){
-															?>
-															<li><a href="<?php echo site_url('ProductsController?cate_id='.$value3['cate_id'])?>"><?=$value3['cate_name']?></a></li>
-															<?php
-														}
-													}
-													?>
-
-												</ul>
-											</li>
-											<?php
-										}
-
-										?>
-
-									</ul>
 								</li>
 							</ul>
 						</div>
