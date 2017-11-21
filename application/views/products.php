@@ -645,7 +645,7 @@
 										$item_name = $value['item_name'];
 										$imgs = strstr($value['imgs'], '__');
 										$lastImgs = $baseurl . '/img_1/' . substr($imgs, 2);
-
+										$itemid = $value['item_id'];
 										?>
 										<div class="product"
 											 data-category="women|women-jeans|women-skirt"
@@ -670,7 +670,7 @@
 																	class="iconfont-search"></i></a>
 														</li>
 														<li>
-															<a href="#" class="circle add-to-cart"><i
+															<a href="" class="circle addCartBtn" itemid="<?php echo $itemid ?>"><i
 																	class="iconfont-shopping-cart"></i></a>
 														</li>
 													</ul>
@@ -758,3 +758,7 @@
 	<!-- // Particular Page Javascripts -->
 </body>
 </html>
+<script>
+	var addcartUrl = "<?php echo site_url('CartController/insertProduct')?>";
+</script>
+<script src="<?php echo base_url()?>js/user.js"></script>

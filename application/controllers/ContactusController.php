@@ -11,7 +11,6 @@ class ContactusController extends CI_Controller {
     public function index()
     {
         $data['usermsg'] =$this->ContactusModel->getUserMsg('login');
-//        if($data['usermsg']['login_name'] == )
         $this->load->view('contactus',$data);
     }
 }

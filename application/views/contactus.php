@@ -375,7 +375,7 @@
 						<?php
 							$usermsgUrl = base_url();
 							foreach($usermsg as $usermsgitem =>$usermsgValue){
-								$lastImgs = $usermsgUrl .'/upload/image/20171117/'.$usermsgValue['userImg'];
+								$lastImgs = $usermsgUrl .'upload/image/20171121/'.$usermsgValue['userImg'];
 						?>
 						<div class="promo inverse-background" style="background: url('<?php echo $lastImgs?>') no-repeat; background-size: auto 100%;">
 							<div class="inner text-center np">

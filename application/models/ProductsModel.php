@@ -9,7 +9,7 @@ class ProductsModel extends CI_Model
     }
 
     function getItem(){
-        $sql = "select * from item ";
+        $sql = "select * from item";
         $query = $this->db->query($sql);
         return $query->result_array();
     }

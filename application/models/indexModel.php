@@ -7,6 +7,21 @@ class indexModel extends CI_Model
     {
         $this->load->database();
     }
+    function getUserMsg($table){
+        $sql = "select * from $table";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+    function getCartID($table){
+        $sql = "select cart_id,item_id from $table";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+    function getItemMsg($table){
+        $sql = "select * from $table";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
     function getProductLeft($table,$leftNum,$aimg){
         $sql = "select item_id,item_name,imgs,price,discount from $table where leftad = $leftNum and aimg = $aimg";
         $query = $this->db->query($sql);

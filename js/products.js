@@ -5,18 +5,7 @@ jQuery(function($) {
 	| Shopping cart - Remove Row on click Close button
 	| ----------------------------------------------------------------------------------
 	*/
-	$(document).on('click', '.tbl-cart .close', function() {
-		$(this).closest('tr').fadeOut(500, function() {
-			$(this).remove();
-			update_cart_total();
-			
-			if ( $('.tbl-cart tbody tr:not(.empty-cart)').length == 0 )
-			{
-				$('.tbl-cart .empty-cart').removeClass('hide');
-			}
-		});
-		
-	});
+
 	
 	
 	/*
@@ -61,7 +50,7 @@ jQuery(function($) {
 				type: 'image'
 			});
 		}
-		
+
 		update_cart_total();
 	}
 	output_cookie();

@@ -82,7 +82,7 @@
                                         <div class="form-group stylish-input">
                                             <label for="contactSubject" class="required">验证码</label>
                                             <input type='text' placeholder="请输入验证码" class='form-control' name="usercode" id="usercode">
-                                            <img src="<?php echo site_url('RegistController/yzm_regist')?>" id="mycodeLogin" alt="验证码" style="position: relative;margin-top:-54px;left:70%;cursor: pointer">
+                                            <img src="<?php echo site_url('LoginController/yzm_login')?>" id="mycodeLogin" alt="验证码" style="position: relative;margin-top:-54px;left:70%;cursor: pointer">
                                         </div>
                                     </div>
                                     <div class="space10"></div>

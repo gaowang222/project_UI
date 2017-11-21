@@ -20,28 +20,20 @@ class CartController extends CI_Controller {
         $data['itemMsg'] = $this->CartModel->getItemMsg('item');
         $this->load->view('cart',$data);
 
-        //1.得到购物车订单数量
-       // $data['ordercount'] = $this->CartModel->getCartordercount('shoppingcart');
-        //点击添加到购物车
-
-       //查找ID
-      /*  if($_GET['item_id'] == $data['cartID'] ){
-            $ordercount = $data['ordercount']+1;
-            $cartID = $data['cartID'];
-            //修改
-            $this->CartModel->updateMsg('shoppingcart',$ordercount,$cartID);
-        }else{*/
-
-            $item_id = $_GET['item_id'];
-            $color_id = $_GET['item_id'];
-            $size_id = $_GET['item_id'];
-            $addtimes = date('Y-m-d H:i:s');
-            $ordercount = '1';
-            $login_id = '10';
-            //插入
-            $this->CartModel->insertshoppingcart($item_id,$color_id,$size_id,$addtimes,$login_id,$ordercount);
-
-
+    }
+    function insertProduct(){
+        $item_id =  $_POST['itemid'];
+        $color_id = $_POST['itemid'];
+        $size_id = $_POST['itemid'];
+        $addtimes = date('Y-m-d H:i:s');
+        $ordercount = '1';
+        $login_id = '10';
+        //插入
+        $this->CartModel->insertshoppingcart($item_id,$color_id,$size_id,$addtimes,$login_id,$ordercount);
+    }
+    function deleteCar(){
+        $cartid = $_POST['cartid'];
+        $this->CartModel->delMsg('shoppingcart',$cartid);
     }
 
 }

@@ -450,7 +450,7 @@
 										</div>
 										<ul class="inline-li li-m-r-l m-t-lg">
 											<li>
-												<a href="<?php echo site_url('CartController?item_id='.$item_id)?>" class="btn btn-default btn-lg btn-round ">加入购物车</a>
+												<a href="" class="btn btn-default btn-lg btn-round" id="addCartBtn" itemid="<?php echo $singleValue['item_id']?>">加入购物车</a>
 											</li>
 										</ul>
 									</figure>
@@ -590,3 +590,8 @@
 	
 </body>
 </html>
+<script>
+	var addcartUrl = "<?php echo site_url('CartController/insertProduct')?>";
+	var cartUrl = "<?php echo site_url('CartController')?>"
+</script>
+<script src="<?php echo base_url()?>js/user.js"></script>

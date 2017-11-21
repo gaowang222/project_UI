@@ -17,7 +17,7 @@ class CartModel extends CI_Model
         return $query->result_array();
     }
     function getCartID($table){
-        $sql = "select item_id from $table";
+        $sql = "select cart_id,item_id from $table";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -33,6 +33,11 @@ class CartModel extends CI_Model
     }
     function updateMsg($table,$ordercount,$item_id){
         $sql = "update $table set ordercount = $ordercount where item_id=$item_id";
+        $query = $this->db->query($sql);
+        echo $query;
+    }
+    function delMsg($table,$cart_id){
+        $sql = "delete from  $table where cart_id=$cart_id";
         $query = $this->db->query($sql);
         echo $query;
     }

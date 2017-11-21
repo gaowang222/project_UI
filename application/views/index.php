@@ -519,6 +519,7 @@
 									$itemid=$value['item_id'];
 									$imgs= strstr($value['imgs'],'__');
 									$lastImgs = $baseurl .'/img_1/'.substr($imgs,2);
+									$itemid = $value['item_id'];
 								?>
 								<div class="product" data-product-id="1">
 									<div class="entry-media">
@@ -530,10 +531,12 @@
 													<div class="circle ribbon ribbon-sale">销售</div>
 												</li>
 												<li>
-													<a href="<?php echo base_url()?>images/women/basic/848051-0014_1.jpg" class="circle" data-toggle="lightbox"><i class="iconfont-search"></i></a>
+													<a href="<?php echo $lastImgs?>" class="circle" data-toggle="lightbox"><i class="iconfont-search"></i></a>
 												</li>
 												<li>
-													<a href="#" class="circle add-to-cart"><i class="iconfont-shopping-cart"></i></a>
+													<a href="" class="circle addCartBtn"
+													   itemid="<?php echo $itemid ?>"><i
+															class="iconfont-shopping-cart"></i></a>
 												</li>
 											</ul>
 											<div class="rate-bar">
@@ -595,6 +598,7 @@
 									$item_id=$slideValue['item_id'];
 									$imgs= strstr($slideValue['imgs'],'__');
 									$lastImgs = $slideurl .'/img_1/'.substr($imgs,2);
+									$itemid = $value['item_id'];
 									?>
 									<div class="product" data-product-id="9">
 										<div class="entry-media">
@@ -614,7 +618,7 @@
 																class="iconfont-search"></i></a>
 													</li>
 													<li>
-														<a href="#" class="circle add-to-cart"><i
+														<a href="" class="circle addCartBtn" itemid="<?php echo $itemid ?>"><i
 																class="iconfont-shopping-cart"></i></a>
 													</li>
 												</ul>
@@ -682,3 +686,7 @@
 <!-- // Particular Page Javascripts -->
 </body>
 </html>
+<script>
+	var addcartUrl = "<?php echo site_url('CartController/insertProduct')?>";
+</script>
+<script src="<?php echo base_url()?>js/user.js"></script>

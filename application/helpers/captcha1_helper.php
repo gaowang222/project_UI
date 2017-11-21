@@ -15,7 +15,7 @@ function code(){
 $fontSize = 20;													//定义字体大小
 $length = 5;													//定义字符串长度
 $strNum = GetVerify($length);											//获取一个随机字符串
-$_SESSION['verify1'] = $strNum;									//付值给session
+$_SESSION['usercode'] = $strNum;									//付值给session
 $width = 90;													//定义图片宽度
 $height = 30;													//定义图片高度
 $im = imagecreate($width,$height);									//生成一张指定宽高的图片

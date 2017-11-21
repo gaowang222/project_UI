@@ -162,10 +162,59 @@ $(function(){
                 alert("登录失败");
             },
             success: function (msg) {  //处理正确时的信息
-                alert("登录成功");
-                window.location.href=indexUrl;
+                console.log(msg.lastIndexOf(1));
+                if(msg.lastIndexOf(1) == 0){
+                    alert("登录成功");
+                   window.location.href=indexUrl;
+                }else if(msg.lastIndexOf(2) == 0){
+                    alert("密码有错");
+                    window.location.reload();
+                }else if(msg.lastIndexOf(3) == 0){
+                    alert("用户名不存在");
+                    window.location.reload();
+                }
             }
         });
     })
 
-});
+
+    //3.single页面，点击添加到购物车
+    $("#addCartBtn").click(function () {
+        var $itemid = $(this).attr('itemid');
+        $.ajax({
+            data: {
+                itemid:$itemid
+            },       //要发送的数据
+            type: "POST",           //发送的方式
+            url: addcartUrl,        //url地址
+            error: function (msg) { //处理出错的信息
+                alert("添加失败");
+            },
+            success: function (msg) {  //处理正确时的信息
+                alert("添加成功");
+                //跳转到购物车页
+                window.location.href = cartUrl;
+            }
+        })
+    })
+
+    //主页加入购物车 因为有多个按钮所以要用class
+    $(".addCartBtn").click(function () {
+        var $itemid = $(this).attr('itemid');
+        $.ajax({
+            data: {
+                itemid:$itemid
+            },       //要发送的数据
+            type: "POST",           //发送的方式
+            url: addcartUrl,        //url地址
+            error: function (msg) { //处理出错的信息
+                alert("添加失败");
+            },
+            success: function (msg) {  //处理正确时的信息
+                alert("添加成功");
+                //跳转到购物车页
+                window.location.href = cartUrl;
+            }
+        })
+    })
+})
