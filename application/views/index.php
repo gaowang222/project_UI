@@ -160,7 +160,13 @@
 														//var_dump($catename2)  ;
 														if($value['parent_cate_id']==$value1['status']){
 															?>
-															<li><a href="<?php echo site_url('ProductsController?cate_id='.$value1['cate_id'])?>"><?=$value1['cate_name']?></a></li>
+															<li><a href="<?php
+
+																//$id= $value1['cate_id'];
+																//?cate_id='.$value1['cate_id']
+
+
+																echo site_url('ProductsController?cate_id=').$value1['cate_id']  ?>"><?=$value1['cate_name']?></a></li>
 
 															<?php
 														}
