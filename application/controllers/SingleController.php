@@ -12,6 +12,10 @@ class SingleController extends CI_Controller {
     {
         $data['single'] = $this->SingleModel->getSingle('item');
         $data['singlerecommend'] = $this->SingleModel->getrecommend('item');
+
+        $data['size'] = $this->SingleModel->getSize('size');
+        $data['color'] = $this->SingleModel->getColor('color');
+
         $data['catename']=$this->SingleModel->getFirstProject();
         $data['catename2']=$this->SingleModel->getFirstProject2('cate');
         $this->load->view('single',$data);

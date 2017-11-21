@@ -11,6 +11,16 @@ class SingleModel extends CI_Model
         $query = $this->db->query($sql);
         return $query->result_array();
     }
+    function getSize($table){
+        $sql = "select * from $table";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+    function getColor($table){
+        $sql = "select * from $table";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
     function getrecommend($table){
         $sql = "select item_id,item_name,imgs,price,discount from $table";
         $query = $this->db->query($sql);

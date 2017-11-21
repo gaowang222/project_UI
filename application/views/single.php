@@ -147,95 +147,11 @@
 								<a href="<?php echo site_url('IndexController')?>">首页</a>
 							</li>
 							<li>
-								<a href="<?php echo site_url('ProductsController')?>">女装</a>
-								<div class="mega-menu" data-col-lg="9" data-col-md="12">
-									<div class="row">
-										<?php
-										foreach ($catename as $key => $value) {
-											?>
-											<div class="col-md-3">
-												<h4 class="menu-title"><?=$value['cate_name']?></h4>
-												<ul class="mega-sub">
-													<?php
-													foreach ($catename2 as $key1 => $value1) {
-														//var_dump($catename2)  ;
-														if($value['parent_cate_id']==$value1['status']){
-															?>
-															<li><a href="<?php echo site_url('ProductsController?cate_id='.$value1['cate_id'])?>"><?=$value1['cate_name']?></a></li>
-
-															<?php
-														}
-													}
-													?>
-												</ul>
-											</div>
-											<?php
-										}
-										?>
-										<div class="col-md-3">
-											<div class="carousel slide m-b" data-ride="carousel">
-												<div class="carousel-inner">
-													<div class="item active">
-														<img src="<?php echo base_url()?>images/men/slide1.jpg" alt="" />
-													</div>
-													<div class="item">
-														<img src="<?php echo base_url()?>images/men/slide2.jpg" alt="" />
-													</div>
-												</div>
-											</div>
-											<h5 class="text-semibold uppercase m-b-sm">主打产品</h5>
-											<p>Lorem ipsum,dolor sit，奉献给了elit。阿提姆·涅克，布兰迪特·斯克伦斯克.</p>
-											<a href="<?php echo site_url('ProductsController')?>" class="btn btn-default btn-round">去商店 →</a>
-										</div>
-									</div>
-								</div>
+								<a href="<?php echo site_url('IndexController')?>">女装</a>
 							<li>
-								<a href="<?php echo site_url('ProductsController')?>">男装</a>
+								<a href="<?php echo site_url('IndexController')?>">男装</a>
 
 								<!-- MEGA MENU -->
-								<div class="mega-menu" data-col-lg="9" data-col-md="12">
-									<div class="row">
-										<?php
-										foreach ($catename as $key => $value) {
-											?>
-											<div class="col-md-3">
-												<h4 class="menu-title"><?=$value['cate_name']?></h4>
-												<ul class="mega-sub">
-													<?php
-													foreach ($catename2 as $key1 => $value1) {
-														//var_dump($catename2)  ;
-														if($value['parent_cate_id']==$value1['status']){
-															?>
-															<li><a href="<?php echo site_url('ProductsController?cate_id='.$value1['cate_id'])?>"><?=$value1['cate_name']?></a></li>
-
-															<?php
-														}
-													}
-													?>
-												</ul>
-											</div>
-											<?php
-										}
-										?>
-										<div class="col-md-3">
-											<div class="carousel slide m-b" data-ride="carousel">
-												<div class="carousel-inner">
-													<div class="item active">
-														<img src="<?php echo base_url()?>images/men/slide1.jpg" alt="" />
-													</div>
-													<div class="item">
-														<img src="<?php echo base_url()?>images/men/slide2.jpg" alt="" />
-													</div>
-												</div>
-											</div>
-											<h5 class="text-semibold uppercase m-b-sm">主打产品</h5>
-											<p>Lorem ipsum,dolor sit，奉献给了elit。阿提姆·涅克，布兰迪特·斯克伦斯克.</p>
-											<a href="<?php echo site_url('ProductsController')?>" class="btn btn-default btn-round">去商店 →</a>
-										</div>
-									</div>
-								</div>
-
-								<!-- // MEGA MENU -->
 
 							</li>
 
@@ -248,7 +164,7 @@
 								<a href="<?php echo site_url('StorelocatorController')?>">商店位置</a>
 							</li>
 							<li>
-								<a href="<?php echo site_url('ContactusController')?>">联系我们</a>
+								<a href="<?php echo site_url('ContactusController')?>">个人中心</a>
 							</li>
 							<li>
 								<a href="<?php echo site_url('LoginController')?>">登录/注册</a>
@@ -364,7 +280,6 @@
 						if($singleValue['item_id'] == $item_id){
 						$imgs= strstr($singleValue['imgs'],'__');
 						$lastImgs = $slideurl .'/img_1/'.substr($imgs,2);
-
 					?>
 					<div class="row">
 						<!-- PRODUCT PREVIEW -->
@@ -412,8 +327,15 @@
 												<div class="inline-middle styled-dd">
 													<select>
 														<option>-- 请选择 --</option>
-														<option value="Black">黑色</option>
-														<option value="Aubergine">红色</option>
+														<?php
+														foreach($color as $colorval){
+															if($colorval['item_id']==$_GET['item_id']){
+																$color_name=$colorval['color_name'];
+																echo "<option value=\"Black\">$color_name</option>";
+															}
+														}
+														?>
+
 													</select>
 												</div>
 											</div>
@@ -423,10 +345,14 @@
 												<div class="inline-middle styled-dd">
 													<select>
 														<option>-- 请选择 --</option>
-														<option value="xs">XS</option>
-														<option value="s">S</option>
-														<option value="s">M</option>
-														<option value="s">L</option>
+														<?php
+														foreach($size as $sizeval){
+															if($sizeval['item_id']==$_GET['item_id']){
+																$size_name=$sizeval['size_name'];
+																echo "<option value=\"Black\">$size_name</option>";
+															}
+														}
+														?>
 													</select>
 												</div>
 											</div>
@@ -434,7 +360,7 @@
 										</div>
 										<ul class="inline-li li-m-r-l m-t-lg">
 											<li>
-												<a href="#" class="btn btn-default btn-lg btn-round add-to-cart">加入购物车</a>
+												<a href='<?php echo site_url("CartController?item_id=$item_id")?>' class="btn btn-danger btn-lg btn-round">加入购物车</a>
 											</li>
 										</ul>
 									</figure>
