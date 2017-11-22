@@ -391,7 +391,7 @@
 													</tr>
 													<tr>
 														<th><a href="#" class="btn btn-primary btn-round uppercase">上一步</a></th>
-														<td><a href="#" class="btn btn-primary btn-round uppercase">点击确认支付</a></td>
+														<td><a href="#" class="btn btn-primary btn-round uppercase">支付啦</a></td>
 													</tr>
 												</table>
 											</div>

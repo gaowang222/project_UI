@@ -19,5 +19,21 @@ $(function () {
                 window.location.reload();
             }
         });
-    })
+    });
+    
+    //点击结算账单
+   /* $("#checkBtn").click(function () {
+        if(!confirm("您确定要现在结算吗？")){
+            return;
+        }else{
+            window.location.href = ;
+        }
+
+       /!* var itemid = $(".mytr");
+        var itemArr = "";
+       for(var i = 0;i<itemid.length;i++){
+           itemArr = itemArr + itemid[i].attr("itemid")+",";
+           console.log(itemArr);
+       }*!/
+    })*/
 })

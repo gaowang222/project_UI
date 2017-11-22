@@ -259,7 +259,7 @@
 											$totalPrice = $totalPrice + $price;
 
 							?>
-							<tr>
+							<tr itemid="<?php echo $itemId;?>" class="mytr">
 								<td>
 									<a class="entry-thumbnail" href="<?php echo $lastImgs?>" data-toggle="lightbox">
 										<img src="<?php echo $lastImgs?>" alt="" />
@@ -298,7 +298,8 @@
 							<span class="pull-right">$<?php echo $totalPrice?></span>
 						</div>
 						<div class="text-center">
-							<a class="btn btn-round btn-danger uppercase" href="<?php echo site_url('CheckoutController')?>">立即结算</a>
+							<a class="btn btn-round btn-success uppercase" href="<?php echo site_url('IndexController')?>">继续购物</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<a class="btn btn-round btn-danger uppercase" href="<?php echo site_url('CheckoutController')?>"">立即结算</a>
 						</div>
 					</div>
 
@@ -418,5 +419,6 @@
 </html>
 <script>
 	var cartUrl = '<?php echo site_url("CartController/deleteCar")?>';
+	var checkUrl = '<?php echo site_url("CheckoutController/check")?>';
 </script>
 <script src="<?php echo base_url()?>js/cart.js"></script>

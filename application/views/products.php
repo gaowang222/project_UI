@@ -5,7 +5,7 @@
 <!--[if (gt IE 9)|!(IE)]><!--><html class="noIE" lang="en-US"><!--<![endif]-->
 <head>
 	<meta charset="UTF-8" />
-	<title>GFashion - Responsive e-commerce HTML Template</title>
+	<title>产品列表页</title>
 	<meta name="description" content=""/>
 	<meta name="keywords" content=""/>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">

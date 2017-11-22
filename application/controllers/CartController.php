@@ -35,5 +35,9 @@ class CartController extends CI_Controller {
         $cartid = $_POST['cartid'];
         $this->CartModel->delMsg('shoppingcart',$cartid);
     }
+    function check(){
+        $itemid = $_POST['itemid'];
+
+    }
 
 }
